@@ -1,0 +1,120 @@
+{
+  "name": "@ryb73/super-duper-parakeet",
+  "version": "1.0.0",
+  "description": "common stuff",
+  "main": "index.js",
+  "repository": "git@github.com:ryb73/super-duper-parakeet.git",
+  "author": "Ryan <rpbiwer@gmail.com>",
+  "license": "MIT",
+  "types": "lib/src/index.d.ts",
+  "scripts": {
+    "build": "tsc --pretty",
+    "typecheck": "tsc --pretty --noEmit",
+    "watch": "tsc --pretty -w",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "test": "jest",
+    "test-all": "yarn lint && yarn typecheck && yarn test"
+  },
+  "files": [
+    "lib/src/"
+  ],
+  "devDependencies": {
+    "@emotion/eslint-plugin": "^11.2.0",
+    "@emotion/react": "^11.1.5",
+    "@ryb73/eslint-config": "^1.0.0",
+    "@shopify/eslint-plugin": "^40.2.1",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.4",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "@yarnpkg/pnpify": "^3.0.0-rc.3",
+    "dayjs": "^1.10.4",
+    "eslint": "^7.25.0",
+    "eslint-config-hardcore": "^19.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-array-func": "^3.1.7",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-ext": "^0.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-no-constructor-bind": "^2.0.4",
+    "eslint-plugin-no-use-extend-native": "^0.5.0",
+    "eslint-plugin-optimize-regex": "^1.2.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-putout": "^7.5.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-regexp": "^0.9.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-sonarjs": "^0.7.0",
+    "eslint-plugin-unicorn": "^31.0.0",
+    "fp-ts": "^2.10.4",
+    "graphql": "^15.5.0",
+    "io-ts": "^2.2.16",
+    "io-ts-types": "^0.5.16",
+    "jest": "^26.0.0",
+    "monocle-ts": "^2.3.9",
+    "newtype-ts": "^0.3.4",
+    "next": "9",
+    "prettier": "^2.2.1",
+    "putout": "^16.11.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-query": "^3.13.12",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "dayjs": "*",
+    "fp-ts": "^2.10.4",
+    "io-ts": "^2.2.16",
+    "io-ts-types": "^0.5.16",
+    "jest": "^26.0.0",
+    "monocle-ts": "^2.3.9",
+    "newtype-ts": "^0.3.4",
+    "next": "9",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-query": "^3.13.12"
+  },
+  "peerDependenciesMeta": {
+    "fp-ts": {
+      "optional": true
+    },
+    "io-ts": {
+      "optional": true
+    },
+    "io-ts-types": {
+      "optional": true
+    },
+    "jest": {
+      "optional": true
+    },
+    "monocle-ts": {
+      "optional": true
+    },
+    "newtype-ts": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-query": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.3.0",
+    "axios": "^0.21.1",
+    "immer": "^9.0.2",
+    "io-ts-reporters": "^1.2.2"
+  }
+}
