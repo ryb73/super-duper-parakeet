@@ -17,8 +17,4 @@ module.exports = {
   parserOptions: {
     sourceType: `module`,
   },
-
-  rules: {
-    "init-declarations": `off`,
-  },
 };
