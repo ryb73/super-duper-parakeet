@@ -12,11 +12,9 @@
   "scripts": {
     "clean": "rm -rf lib/",
     "build": "tsc --pretty",
-    "typecheck": "tsc --pretty --noEmit",
     "watch": "tsc --pretty -w",
     "lint": "eslint . --ext ts --ext tsx --ext js",
-    "test": "jest",
-    "test-all": "yarn lint && yarn typecheck && yarn test"
+    "test": "jest"
   },
   "files": [
     "lib/src/"

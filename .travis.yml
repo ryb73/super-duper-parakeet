@@ -6,8 +6,9 @@ node_js:
 - 14
 install: yarn --immutable
 script:
-- yarn test-all
-- npm publish --dry-run
+- yarn lint
+- yarn build
+- yarn test
 deploy:
   skip_cleanup: true
   provider: npm
