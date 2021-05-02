@@ -1,4 +1,6 @@
-/* eslint-disable unicorn/prefer-module, strict */
+/* eslint-disable unicorn/prefer-module */
+
+"use strict";
 
 module.exports = {
   extends: `@ryb73`,
