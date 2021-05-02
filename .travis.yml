@@ -7,6 +7,7 @@ node_js:
 install: yarn --immutable
 script:
 - yarn test-all
+- npm publish --dry-run
 deploy:
   skip_cleanup: true
   provider: npm
