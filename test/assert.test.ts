@@ -1,4 +1,4 @@
-import { assert as a } from "./assert";
+import { assert as a } from "../src/assert";
 
 describe(`assert`, () => {
   test(`truthy`, () => {

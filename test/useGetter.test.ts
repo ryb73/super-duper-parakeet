@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import { useState } from "react";
-import { useGetter } from "./useGetter";
+import { useGetter } from "../src/useGetter";
 
 test(`useForceUpdate`, () => {
   const { result } = renderHook(() => {

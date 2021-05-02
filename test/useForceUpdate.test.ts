@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react-hooks";
-import { useCountRenders } from "./testing/useCountRenders";
-import { useForceUpdate } from "./useForceUpdate";
+import { useCountRenders } from "../src/testing/useCountRenders";
+import { useForceUpdate } from "../src/useForceUpdate";
 
 test(`useForceUpdate`, () => {
   const { result } = renderHook(() => {

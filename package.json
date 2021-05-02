@@ -2,12 +2,15 @@
   "name": "@ryb73/super-duper-parakeet",
   "version": "1.0.0",
   "description": "common stuff",
-  "main": "index.js",
   "repository": "git@github.com:ryb73/super-duper-parakeet.git",
   "author": "Ryan <rpbiwer@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "types": "lib/src/index.d.ts",
   "scripts": {
+    "clean": "rm -rf lib/",
     "build": "tsc --pretty",
     "typecheck": "tsc --pretty --noEmit",
     "watch": "tsc --pretty -w",
