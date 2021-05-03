@@ -1,3 +1,4 @@
+import React from "react";
 import type { QueryObserverLoadingResult } from "react-query";
 
 export function Loading({ result }: { result?: QueryObserverLoadingResult }) {
