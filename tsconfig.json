@@ -13,7 +13,7 @@
     "strictNullChecks": true,
     "outDir": "lib",
     "declaration": true,
-    "jsx": "preserve"
+    "jsx": "react"
   },
   "exclude": ["node_modules", "lib"],
   "include": [
