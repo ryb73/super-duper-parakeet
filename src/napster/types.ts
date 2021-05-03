@@ -2,9 +2,11 @@ import type { TypeOf } from "io-ts";
 import { type } from "io-ts";
 import { brandedString } from "../io/brandedString";
 
-const UserId = brandedString<{
+export type UserIdBrand = {
   readonly NapsterUserIdBrand: unique symbol;
-}>(`NapsterUserId`);
+};
+
+const UserId = brandedString<UserIdBrand>(`NapsterUserId`);
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 type UserId = TypeOf<typeof UserId>;
 export { UserId };
