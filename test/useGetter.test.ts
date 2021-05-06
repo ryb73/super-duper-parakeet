@@ -2,7 +2,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { useState } from "react";
 import { useGetter } from "../src/useGetter";
 
-test(`useForceUpdate`, () => {
+test(`useGetter`, () => {
   const { result } = renderHook(() => {
     const [value, setValue] = useState<`after` | `before`>(`before`);
 
