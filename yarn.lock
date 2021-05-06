@@ -3681,6 +3681,7 @@ __metadata:
     "@shopify/eslint-plugin": ^40.2.1
     "@testing-library/react-hooks": ^5.1.2
     "@types/jest": ^26.0.23
+    "@types/lodash": ^4.14.168
     "@types/node": ^12.0.0
     "@types/react": ^17.0.4
     "@typescript-eslint/eslint-plugin": ^4.22.0
@@ -3716,6 +3717,7 @@ __metadata:
     io-ts-reporters: ^1.2.2
     io-ts-types: ^0.5.16
     jest: ^26.0.0
+    lodash: ^4.17.21
     monocle-ts: ^2.3.9
     newtype-ts: ^0.3.4
     next: 9
@@ -4024,6 +4026,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 3aaf557d5b82e733d5a17b7f55af5d6be953363c3a594f006d64265790fe87c301c6e1400c0b6b1cf72add50a0ceddc25afb8231ab8302a2e5b6ebfbfac30e5d
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.14.168":
+  version: 4.14.168
+  resolution: "@types/lodash@npm:4.14.168"
+  checksum: 9a4e25f89fc035b9f0388f1f7be85e5eff49f9e6db0d93432c9a89fce0916f8a89db4e8290415f7ea02de6b00d3573826378dcb655b7b2d20530a6e8d6dd6fd0
   languageName: node
   linkType: hard
 

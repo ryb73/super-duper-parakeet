@@ -1,14 +1,26 @@
 /* eslint-disable no-console */
+import throttle from "lodash/throttle";
 import { useEffect, useMemo, useState } from "react";
 import { useGetter } from "../useGetter";
 
-type Options = {
+export type Options = {
   log?: (message: string, values: Record<string, unknown>) => void;
+  throttle?: boolean | number;
 };
 
-export function useWatchValue(name: string, v: unknown, { log }: Options = {}) {
-  const effectiveLog = useMemo(() => log ?? console.debug.bind(console), [log]);
-  const getLog = useGetter(effectiveLog);
+function useLog({ log, throttle: shouldThrottle }: Options = {}) {
+  const effectiveLog = useMemo(() => {
+    const fn = log ?? console.debug.bind(console);
+    if (!shouldThrottle) return fn;
+
+    return throttle(fn, shouldThrottle === true ? 1000 / 60 : shouldThrottle);
+  }, [log, shouldThrottle]);
+
+  return useGetter(effectiveLog);
+}
+
+export function useWatchValue(name: string, v: unknown, options: Options = {}) {
+  const getLog = useLog(options);
 
   useEffect(() => {
     getLog()(`updated ${name}:`, v);
@@ -18,10 +30,9 @@ export function useWatchValue(name: string, v: unknown, { log }: Options = {}) {
 export function useWatchValues(
   name: string,
   vs: Record<string, unknown>,
-  { log }: Options = {},
+  options: Options = {},
 ) {
-  const effectiveLog = useMemo(() => log ?? console.debug.bind(console), [log]);
-  const getLog = useGetter(effectiveLog);
+  const getLog = useLog(options);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const memoedVs = useMemo(() => vs, Object.values(vs));
