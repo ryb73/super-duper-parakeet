@@ -5,13 +5,18 @@ export type Scope =  // https://developer.spotify.com/documentation/general/guid
   | "playlist-read-collaborative"
   | "playlist-read-private"
   | "streaming"
+  | "ugc-image-upload"
   | "user-follow-modify"
   | "user-follow-read"
   | "user-library-modify"
   | "user-library-read"
   | "user-modify-playback-state"
+  // user-read-birthdate deprecated? no longer on aforementioned docs page
   | "user-read-birthdate"
+  | "user-read-currently-playing"
   | "user-read-email"
+  | "user-read-playback-position"
+  | "user-read-playback-state"
   | "user-read-private"
   | "user-read-recently-played"
   | "user-top-read";
