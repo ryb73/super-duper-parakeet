@@ -8,4 +8,8 @@ describe(`Loading`, () => {
   test(`base`, () => {
     render(<Loading />).getByText(`Loading...`);
   });
+
+  test(`retryCount`, () => {
+    render(<Loading retryCount={2} />).getByText(`Loading... (retry 2)`);
+  });
 });
