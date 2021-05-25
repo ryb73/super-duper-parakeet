@@ -8,8 +8,9 @@ import { Loading } from "../Loading";
 import { isQueryResolved } from "./isQueryResolved";
 
 type SingularProps<Data> = {
-  result: QueryObserverResult<Data>;
   children: (result: QueryObserverSuccessResult<Data>) => ReactNode;
+  LoadingIndicator?: Loading;
+  result: QueryObserverResult<Data>;
 };
 
 type PairProps<D1, D2> = {
@@ -52,9 +53,10 @@ export function WhenSuccessfulMultiple<D1, D2>({
 export function WhenSuccessful<Data>({
   result,
   children,
+  LoadingIndicator = Loading,
 }: SingularProps<Data>) {
-  if (result.isLoading) return <Loading retryCount={result.failureCount} />;
-  if (result.isIdle) return <Loading />;
+  if (result.isLoading) return <LoadingIndicator retryCount={result.failureCount} />;
+  if (result.isIdle) return <LoadingIndicator />;
   if (result.isError) return <div>Error :(</div>;
 
   return <>{children(result)}</>;

@@ -1,8 +1,10 @@
+import type { PropsOf } from "@emotion/react";
 import { render } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
-import type { UseQueryOptions } from "react-query";
+import type { QueryObserverSuccessResult, UseQueryOptions } from "react-query";
 import { useQuery } from "react-query";
+import type { Options as LoadingOptions } from "../../src/Loading";
 import { WhenSuccessful } from "../../src/queries/WhenSuccessful";
 import { queryWrapper } from "../common/queryWrapper";
 
@@ -30,18 +32,76 @@ function renderSampleQuery({ error, queryOptions }: SampleQueryOptions = {}) {
   );
 }
 
-describe(`WhenSuccessful`, () => {
+type OptionalProps = Omit<
+  PropsOf<typeof WhenSuccessful>,
+  "children" | "result"
+>;
+
+type TestOptions = {
+  props?: OptionalProps;
+  text?: string;
+};
+
+function renderSuccess({ data, isFetching }: QueryObserverSuccessResult) {
+  return <>Success {JSON.stringify([data, isFetching])}</>;
+}
+
+function testRetries({
+  props,
+  text = `Loading... (retry 1)`,
+}: TestOptions = {}) {
+  test(`retries`, async () => {
+    jest.spyOn(console, `error`).mockImplementation();
+
+    const { result, waitFor } = renderSampleQuery({
+      queryOptions: { retry: 1, retryDelay: 5 },
+      error: true,
+    });
+
+    await waitFor(() => result.current.failureCount === 1);
+
+    render(
+      <WhenSuccessful {...props} result={result.current}>
+        {renderSuccess}
+      </WhenSuccessful>,
+    ).getByText(text);
+
+    await waitFor(() => result.current.isError);
+  });
+}
+
+function testIdle({ props, text = `Loading...` }: TestOptions = {}) {
+  test(`idle`, () => {
+    const { result } = renderSampleQuery({
+      queryOptions: { enabled: false },
+    });
+
+    render(
+      <WhenSuccessful {...props} result={result.current}>
+        {renderSuccess}
+      </WhenSuccessful>,
+    ).getByText(text);
+  });
+}
+
+function testLoading({ props, text = `Loading...` }: TestOptions = {}) {
   test(`loading`, () => {
     const { result, waitFor } = renderSampleQuery();
 
     render(
-      <WhenSuccessful result={result.current}>
-        {({ data }) => <>Success {JSON.stringify(data)}</>}
+      <WhenSuccessful {...props} result={result.current}>
+        {renderSuccess}
       </WhenSuccessful>,
-    ).getByText(`Loading...`);
+    ).getByText(text);
 
     return waitFor(() => result.current.isSuccess);
   });
+}
+
+describe(`WhenSuccessful`, () => {
+  testLoading();
+  testIdle();
+  testRetries();
 
   test(`success`, async () => {
     const { result, waitFor } = renderSampleQuery();
@@ -49,10 +109,8 @@ describe(`WhenSuccessful`, () => {
     await waitFor(() => result.current.isSuccess);
 
     render(
-      <WhenSuccessful result={result.current}>
-        {({ data }) => <>Success {JSON.stringify(data)}</>}
-      </WhenSuccessful>,
-    ).getByText(`Success 695`);
+      <WhenSuccessful result={result.current}>{renderSuccess}</WhenSuccessful>,
+    ).getByText(`Success [695,false]`);
   });
 
   test(`error`, async () => {
@@ -63,9 +121,7 @@ describe(`WhenSuccessful`, () => {
     await waitFor(() => result.current.isError);
 
     render(
-      <WhenSuccessful result={result.current}>
-        {({ data }) => <>Success {JSON.stringify(data)}</>}
-      </WhenSuccessful>,
+      <WhenSuccessful result={result.current}>{renderSuccess}</WhenSuccessful>,
     ).getByText(`Error :(`);
   });
 
@@ -83,44 +139,17 @@ describe(`WhenSuccessful`, () => {
     await waitFor(() => result.current.isFetching);
 
     render(
-      <WhenSuccessful result={result.current}>
-        {({ data, isFetching }) => (
-          <>Success {JSON.stringify([data, isFetching])}</>
-        )}
-      </WhenSuccessful>,
+      <WhenSuccessful result={result.current}>{renderSuccess}</WhenSuccessful>,
     ).getByText(`Success [695,true]`);
   });
 
-  test(`idle`, () => {
-    const { result } = renderSampleQuery({ queryOptions: { enabled: false } });
+  describe(`LoadingIndicator`, () => {
+    function LoadingIndicator({ retryCount = 0 }: LoadingOptions = {}) {
+      return <span>{`da da da `.repeat(retryCount + 1)}</span>;
+    }
 
-    render(
-      <WhenSuccessful result={result.current}>
-        {({ data, isFetching }) => (
-          <>Success {JSON.stringify([data, isFetching])}</>
-        )}
-      </WhenSuccessful>,
-    ).getByText(`Loading...`);
-  });
-
-  test(`retries`, async () => {
-    jest.spyOn(console, `error`).mockImplementation();
-
-    const { result, waitFor } = renderSampleQuery({
-      queryOptions: { retry: 1, retryDelay: 5 },
-      error: true,
-    });
-
-    await waitFor(() => result.current.failureCount === 1);
-
-    render(
-      <WhenSuccessful result={result.current}>
-        {({ data, isFetching }) => (
-          <>Success {JSON.stringify([data, isFetching])}</>
-        )}
-      </WhenSuccessful>,
-    ).getByText(`Loading... (retry 1)`);
-
-    await waitFor(() => result.current.isError);
+    testLoading({ props: { LoadingIndicator }, text: `da da da` });
+    testIdle({ props: { LoadingIndicator }, text: `da da da` });
+    testRetries({ props: { LoadingIndicator }, text: `da da da da da da` });
   });
 });
