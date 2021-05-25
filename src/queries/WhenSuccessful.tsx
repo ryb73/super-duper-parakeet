@@ -4,8 +4,8 @@ import type {
   QueryObserverResult,
   QueryObserverSuccessResult,
 } from "react-query";
+import { Loading } from "../Loading";
 import { isQueryResolved } from "./isQueryResolved";
-import { Loading } from "./Loading";
 
 type SingularProps<Data> = {
   result: QueryObserverResult<Data>;
@@ -32,7 +32,8 @@ export function WhenSuccessfulMultiple<D1, D2>({
     undefined,
   );
 
-  if (relevantResult?.isLoading) return <Loading result={relevantResult} />;
+  if (relevantResult?.isLoading)
+    return <Loading retryCount={relevantResult.failureCount} />;
   if (relevantResult?.isError) return <div>Error :(</div>;
   if (relevantResult?.isIdle) return <Loading />;
 
@@ -52,7 +53,7 @@ export function WhenSuccessful<Data>({
   result,
   children,
 }: SingularProps<Data>) {
-  if (result.isLoading) return <Loading result={result} />;
+  if (result.isLoading) return <Loading retryCount={result.failureCount} />;
   if (result.isIdle) return <Loading />;
   if (result.isError) return <div>Error :(</div>;
 
