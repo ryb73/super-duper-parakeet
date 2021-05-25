@@ -8,7 +8,7 @@ function Loading({ retryCount }: Options = {}) {
   return (
     <div>
       Loading...
-      {retryCount && ` (retry ${retryCount})`}
+      {!!retryCount && ` (retry ${retryCount})`}
     </div>
   );
 }

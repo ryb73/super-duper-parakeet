@@ -9,7 +9,13 @@ describe(`Loading`, () => {
     render(<Loading />).getByText(`Loading...`);
   });
 
-  test(`retryCount`, () => {
-    render(<Loading retryCount={2} />).getByText(`Loading... (retry 2)`);
+  describe(`retryCount`, () => {
+    test(`base`, () => {
+      render(<Loading retryCount={2} />).getByText(`Loading... (retry 2)`);
+    });
+
+    test(`=== 0`, () => {
+      render(<Loading retryCount={0} />).getByText(`Loading...`);
+    });
   });
 });
