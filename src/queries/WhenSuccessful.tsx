@@ -55,7 +55,8 @@ export function WhenSuccessful<Data>({
   children,
   LoadingIndicator = Loading,
 }: SingularProps<Data>) {
-  if (result.isLoading) return <LoadingIndicator retryCount={result.failureCount} />;
+  if (result.isLoading)
+    return <LoadingIndicator retryCount={result.failureCount} />;
   if (result.isIdle) return <LoadingIndicator />;
   if (result.isError) return <div>Error :(</div>;
 
