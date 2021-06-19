@@ -93,6 +93,12 @@
     "react-query": "^3.13.12"
   },
   "peerDependenciesMeta": {
+    "@emotion/react": {
+      "optional": true
+    },
+    "dayjs": {
+      "optional": true
+    },
     "fp-ts": {
       "optional": true
     },
