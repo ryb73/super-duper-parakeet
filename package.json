@@ -79,6 +79,7 @@
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
+    "@emotion/react": "*",
     "dayjs": "*",
     "fp-ts": "^2.10.4",
     "io-ts": "^2.2.16",
