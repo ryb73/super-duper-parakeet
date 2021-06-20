@@ -4868,7 +4868,7 @@ __metadata:
     fp-ts: ^2.10.4
     io-ts: ^2.2.16
     io-ts-types: ^0.5.16
-    jest: ^26.0.0
+    jest: ^26.0.0 || ^27.0.0
     monocle-ts: ^2.3.9
     newtype-ts: ^0.3.4
     next: 9
