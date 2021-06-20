@@ -14,7 +14,7 @@
     "build": "tsc --pretty",
     "watch": "tsc --pretty -w",
     "lint": "eslint . --ext ts --ext tsx --ext js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "files": [
     "lib/src/"
