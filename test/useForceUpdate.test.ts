@@ -10,25 +10,23 @@ function hookFn() {
   };
 }
 
-describe(`useForceUpdate`, () => {
-  test(`works`, () => {
-    const { result } = renderHook(hookFn());
+test(`works`, () => {
+  const { result } = renderHook(hookFn());
 
-    expect(result.current.countRef.current).toBe(1);
+  expect(result.current.countRef.current).toBe(1);
 
-    act(() => result.current.forceUpdate());
+  act(() => result.current.forceUpdate());
 
-    expect(result.current.countRef.current).toBe(2);
-  });
+  expect(result.current.countRef.current).toBe(2);
+});
 
-  test(`doesn't create new function on every invocation`, () => {
-    const { result } = renderHook(hookFn());
+test(`doesn't create new function on every invocation`, () => {
+  const { result } = renderHook(hookFn());
 
-    const { forceUpdate } = result.current;
+  const { forceUpdate } = result.current;
 
-    act(() => result.current.forceUpdate());
+  act(() => result.current.forceUpdate());
 
-    // eslint-disable-next-line unicorn/consistent-destructuring
-    expect(result.current.forceUpdate).toBe(forceUpdate);
-  });
+  // eslint-disable-next-line unicorn/consistent-destructuring
+  expect(result.current.forceUpdate).toBe(forceUpdate);
 });
