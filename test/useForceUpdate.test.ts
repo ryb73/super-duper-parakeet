@@ -30,3 +30,20 @@ test(`doesn't create new function on every invocation`, () => {
   // eslint-disable-next-line unicorn/consistent-destructuring
   expect(result.current.forceUpdate).toBe(forceUpdate);
 });
+
+test(`doesn't update if unmounted`, () => {
+  const spy = jest.spyOn(console, `error`);
+
+  const {
+    result: {
+      current: { forceUpdate },
+    },
+    unmount,
+  } = renderHook(hookFn());
+
+  unmount();
+
+  act(() => forceUpdate());
+
+  expect(spy.mock.calls.length).toBe(0);
+});

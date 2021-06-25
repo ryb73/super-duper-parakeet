@@ -1,6 +1,18 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export function useForceUpdate() {
   const [, set] = useState({});
-  return useCallback(() => set({}), []);
+
+  const unmounted = useRef(false);
+
+  useEffect(
+    () => () => {
+      unmounted.current = true;
+    },
+    [],
+  );
+
+  return useCallback(() => {
+    if (!unmounted.current) set({});
+  }, []);
 }
