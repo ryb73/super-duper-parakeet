@@ -19,18 +19,11 @@ describe(`non-null`, () => {
 describe(`null`, () => {
   test(`decode`, () => {
     const s = null;
-    expect(forceDecode(T, s)).toBe(undefined);
-  });
-});
-
-describe(`undefined`, () => {
-  test(`decode`, () => {
-    const s = undefined;
-    expect(forceDecode(T, s)).toBe(undefined);
+    expect(forceDecode(T, s)).toBe(null);
   });
 
   test(`encode`, () => {
-    const s = undefined;
-    expect(T.encode(s)).toBe(undefined);
+    const s = null;
+    expect(T.encode(s)).toBe(s);
   });
 });
