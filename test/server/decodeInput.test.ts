@@ -16,7 +16,7 @@ test(`no existing data`, async () => {
     handler,
   );
 
-  await resultantHandler(req, res);
+  await resultantHandler(req, res, {});
 
   expect(res.status.mock.calls).toEqual([]);
   expect(res.end.mock.calls).toEqual([]);
@@ -34,8 +34,13 @@ test(`existing data`, async () => {
   const existingData = { derple: `tv` };
 
   const handler = jest.fn(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    (rq: string, rs: MinimalResponse, args: typeof existingData) => {},
+    /* eslint-disable @typescript-eslint/no-unused-vars */
+    (
+      rq: string,
+      rs: MinimalResponse,
+      args: { derple: string; input: string },
+    ) => {},
+    /* eslint-enable @typescript-eslint/no-unused-vars */
   );
 
   const resultantHandler = decodeInput(string, (r: string) => r.repeat(2))(
@@ -63,7 +68,7 @@ describe(`error`, () => {
 
     const resultantHandler = decodeInput(string, () => 0)(handler);
 
-    await resultantHandler(req, res);
+    await resultantHandler(req, res, {});
 
     expect(res.status.mock.calls).toEqual([[400]]);
     expect(res.end.mock.calls).toEqual([[]]);
@@ -82,7 +87,7 @@ describe(`error`, () => {
 
     const resultantHandler = decodeInput(string, () => 0, { onError })(handler);
 
-    await resultantHandler(req, res);
+    await resultantHandler(req, res, {});
 
     expect(res.status.mock.calls).toEqual([[400]]);
     expect(res.end.mock.calls).toEqual([[]]);
