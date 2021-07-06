@@ -1,28 +1,28 @@
 import { pipe } from "fp-ts/function";
 import { fold } from "fp-ts/lib/Either";
 import type { Errors, Type } from "io-ts";
-import type { NextApiRequest, NextApiResponse } from "next";
 
 type Options = {
   onError?: (errors: Errors) => void;
 };
 
-export function decodeInput<
-  A,
-  O,
-  Data extends Record<string, unknown> | undefined = undefined
->(
+export type MinimalResponse = {
+  status: (code: number) => void;
+  end: () => void;
+};
+
+export function decodeInput<A, O, Req, Res extends MinimalResponse>(
   T: Type<A, O>,
-  getInput: (req: NextApiRequest) => unknown,
+  getInput: (req: Req) => unknown,
   { onError }: Options = {},
 ) {
-  return (
+  return <Data extends Record<string, unknown> | undefined>(
     handler: (
-      req: NextApiRequest,
-      res: NextApiResponse,
+      req: Req,
+      res: Res,
       data: Data & { input: A },
     ) => Promise<void> | void,
-  ) => (req: NextApiRequest, res: NextApiResponse, data?: Data) => {
+  ) => (req: Req, res: Res, data?: Data) => {
     const input = getInput(req);
     return pipe(
       T.decode(input),
