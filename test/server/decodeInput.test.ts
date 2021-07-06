@@ -29,6 +29,8 @@ test(`existing data`, async () => {
   const res = {
     status: jest.fn(),
     end: jest.fn(),
+    // Add another method just to make sure the types are working correctly (I forget the word for it, inheritance? duck typing? ugh it's late)
+    another: jest.fn(),
   };
 
   const existingData = { derple: `tv` };
@@ -37,7 +39,7 @@ test(`existing data`, async () => {
     /* eslint-disable @typescript-eslint/no-unused-vars */
     (
       rq: string,
-      rs: MinimalResponse,
+      rs: MinimalResponse & { another: () => void },
       args: { derple: string; input: string },
     ) => {},
     /* eslint-enable @typescript-eslint/no-unused-vars */

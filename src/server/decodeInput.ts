@@ -15,12 +15,12 @@ interface InputObject<T> extends Record<string, unknown> {
   input: T;
 }
 
-export function decodeInput<A, O, Req, Res extends MinimalResponse>(
+export function decodeInput<A, O, Req>(
   T: Type<A, O>,
   getInput: (req: Req) => unknown,
   { onError }: Options = {},
 ) {
-  return <DataWithInput extends InputObject<A>>(
+  return <DataWithInput extends InputObject<A>, Res extends MinimalResponse>(
     handler: (req: Req, res: Res, data: DataWithInput) => Promise<void> | void,
   ) => (req: Req, res: Res, data: Omit<DataWithInput, "input">) => {
     const decoded = T.decode(getInput(req));
