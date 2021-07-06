@@ -56,6 +56,41 @@ test(`existing data`, async () => {
   ]);
 });
 
+// This shouldn't really be relied upon in practice, but I want to be sure nothing
+// weird happens if the programmer passes in data with an existing `input` key
+test(`existing input key`, async () => {
+  const req = `reqq`;
+
+  const res = {
+    status: jest.fn(),
+    end: jest.fn(),
+  };
+
+  const existingData = { derple: `tv`, input: 42 };
+
+  const handler = jest.fn(
+    /* eslint-disable @typescript-eslint/no-unused-vars */
+    (
+      rq: string,
+      rs: MinimalResponse,
+      args: { derple: string; input: string },
+    ) => {},
+    /* eslint-enable @typescript-eslint/no-unused-vars */
+  );
+
+  const resultantHandler = decodeInput(string, (r: string) => r.repeat(2))(
+    handler,
+  );
+
+  await resultantHandler(req, res, existingData);
+
+  expect(res.status.mock.calls).toEqual([]);
+  expect(res.end.mock.calls).toEqual([]);
+  expect(handler.mock.calls).toEqual([
+    [req, res, { ...existingData, input: `${req}${req}` }],
+  ]);
+});
+
 describe(`error`, () => {
   test(`base`, async () => {
     const req = `reqq`;
