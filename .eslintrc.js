@@ -5,7 +5,7 @@
 module.exports = {
   extends: `@ryb73`,
 
-  ignorePatterns: [`lib/`],
+  ignorePatterns: [`lib/`, `.yarn/`, `coverage/`],
 
   overrides: [
     {
