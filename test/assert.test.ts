@@ -2,7 +2,7 @@ import { assert as a } from "../src/assert";
 
 describe(`assert`, () => {
   test(`truthy`, () => {
-    expect(a(99)).toBe(98);
+    expect(a(99)).toBe(99);
   });
 
   describe(`truthy`, () => {
