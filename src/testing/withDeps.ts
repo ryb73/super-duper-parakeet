@@ -1,28 +1,50 @@
 import { assert } from "../assert";
 
-type Params<AllValue> = {
-  beforeAll?: () => AllValue | PromiseLike<AllValue>;
+type ValueFn<T> = () => PromiseLike<T> | T;
+
+type Params<AllValue, EachValue> = {
+  beforeAll?: ValueFn<AllValue>;
   afterAll?: (value: AllValue) => void;
-  tests: (values: { all: () => AllValue }) => void;
-  timeout?: number;
+  beforeEach?: ValueFn<EachValue>;
+  afterEach?: (value: EachValue) => void;
+  tests: (values: { all: () => AllValue; each: () => EachValue }) => void;
 };
 
-export function withDeps<T>(params: Params<T>) {
-  const { beforeAll: cbBeforeAll, afterAll: cbAfterAll, tests } = params;
+export function withDeps<AllValue, EachValue>({
+  beforeAll: cbBeforeAll,
+  afterAll: cbAfterAll,
+  beforeEach: cbBeforeEach,
+  afterEach: cbAfterEach,
+  tests,
+}: Params<AllValue, EachValue>) {
+  const ref: { all?: AllValue; each?: EachValue } = {};
 
-  let value: T | undefined;
-
+  // alls
   if (cbBeforeAll) {
     beforeAll(async () => {
-      value = await cbBeforeAll();
-    });
-
-    afterAll(() => {
-      value = undefined;
+      ref.all = await cbBeforeAll();
     });
   }
 
-  if (cbAfterAll) afterAll(() => cbAfterAll(value!));
+  afterAll(() => {
+    if (cbAfterAll) cbAfterAll(assert(ref.all));
+    ref.all = undefined;
+  });
 
-  tests({ all: () => assert(value) });
+  // eaches
+  if (cbBeforeEach) {
+    beforeEach(async () => {
+      ref.each = await cbBeforeEach();
+    });
+  }
+
+  afterEach(() => {
+    if (cbAfterEach) cbAfterEach(assert(ref.each));
+    ref.each = undefined;
+  });
+
+  tests({
+    all: () => assert(ref.all, `All called outside test`),
+    each: () => assert(ref.each, `Each called outside test`),
+  });
 }
