@@ -4,9 +4,12 @@ type ValueFn<T> = () => PromiseLike<T> | T;
 
 type Params<AllValue, EachValue> = {
   beforeAll?: ValueFn<AllValue>;
-  afterAll?: (value: AllValue) => void;
+  // The afters accept both PromiseLike and void. There's risk that a poorly-formed PromiseLike object is
+  // accepted as void type by Typescript, but I'm leaving as is because switching void to undefined would
+  // make using afterAll annoying, and since this is a testing utility, errors are likely to be caught anyway.
+  afterAll?: (value: AllValue) => PromiseLike<void> | void;
   beforeEach?: ValueFn<EachValue>;
-  afterEach?: (value: EachValue) => void;
+  afterEach?: (value: EachValue) => PromiseLike<void> | void;
   tests: (values: { all: () => AllValue; each: () => EachValue }) => void;
 };
 
@@ -26,9 +29,10 @@ export function withDeps<AllValue, EachValue>({
     });
   }
 
-  afterAll(() => {
-    if (cbAfterAll) cbAfterAll(assert(ref.all));
+  afterAll(async () => {
+    const allValue = ref.all!;
     ref.all = undefined;
+    if (cbAfterAll) await cbAfterAll(allValue);
   });
 
   // eaches
@@ -38,9 +42,10 @@ export function withDeps<AllValue, EachValue>({
     });
   }
 
-  afterEach(() => {
-    if (cbAfterEach) cbAfterEach(assert(ref.each));
+  afterEach(async () => {
+    const eachValue = ref.each!;
     ref.each = undefined;
+    if (cbAfterEach) await cbAfterEach(eachValue);
   });
 
   tests({
