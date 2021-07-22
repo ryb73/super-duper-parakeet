@@ -19,4 +19,8 @@ module.exports = {
   parserOptions: {
     sourceType: `module`,
   },
+
+  rules: {
+    "prefer-destructuring": `off`,
+  },
 };

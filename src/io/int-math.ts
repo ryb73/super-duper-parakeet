@@ -11,11 +11,11 @@ export function subtractInt<T extends Int>(minuend: T, ...subtrahends: T[]): T {
 }
 
 export function minInt<T extends Int>(...values: T[]): T {
-  return (Math.min(...values) as unknown) as T;
+  return Math.min(...values) as unknown as T;
 }
 
 export function maxInt<T extends Int>(...values: T[]): T {
-  return (Math.max(...values) as unknown) as T;
+  return Math.max(...values) as unknown as T;
 }
 
 export function floor(n: number): Int {

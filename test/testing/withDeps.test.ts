@@ -66,7 +66,6 @@ describe(`each`, () => {
         test(`value`, () => expect(each()).toBe(1234));
       },
       beforeEach: () => 1234,
-      // eslint-disable-next-line sonarjs/no-identical-functions
       afterEach: () => ({
         then: (fn) => {
           setThenned();

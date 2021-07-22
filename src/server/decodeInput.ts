@@ -21,19 +21,24 @@ export function decodeInput<A, O, Req>(
   { onError }: Options = {},
 ) {
   return <DataWithInput extends InputObject<A>, Res extends MinimalResponse>(
-    handler: (req: Req, res: Res, data: DataWithInput) => Promise<void> | void,
-  ) => (req: Req, res: Res, data: Omit<DataWithInput, "input">) => {
-    const decoded = T.decode(getInput(req));
+      handler: (
+        req: Req,
+        res: Res,
+        data: DataWithInput,
+      ) => Promise<void> | void,
+    ) =>
+    (req: Req, res: Res, data: Omit<DataWithInput, "input">) => {
+      const decoded = T.decode(getInput(req));
 
-    if (isLeft(decoded)) {
-      if (onError) onError(decoded.left);
+      if (isLeft(decoded)) {
+        if (onError) onError(decoded.left);
 
-      res.status(400);
-      res.end();
-      return undefined;
-    }
+        res.status(400);
+        res.end();
+        return undefined;
+      }
 
-    const newData = { ...data, input: decoded.right } as DataWithInput;
-    return handler(req, res, newData);
-  };
+      const newData = { ...data, input: decoded.right } as DataWithInput;
+      return handler(req, res, newData);
+    };
 }

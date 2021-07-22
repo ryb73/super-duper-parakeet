@@ -4,7 +4,7 @@ import type { Awaited } from "./Awaited";
 
 // https://github.com/tannerlinsley/react-query/issues/1675
 export function useQueriesTyped<
-  TQueries extends readonly UseQueryOptions<any>[]
+  TQueries extends readonly UseQueryOptions<any>[],
 >(
   queries: [...TQueries],
 ): {

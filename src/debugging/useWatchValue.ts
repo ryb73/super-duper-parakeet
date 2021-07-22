@@ -37,9 +37,8 @@ export function useWatchValues(
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const memoedVs = useMemo(() => vs, Object.values(vs));
 
-  const [previousValues, setPreviousValues] = useState<
-    Record<string, unknown>
-  >();
+  const [previousValues, setPreviousValues] =
+    useState<Record<string, unknown>>();
 
   useEffect(() => {
     const changedEntries = Object.entries(memoedVs).filter(

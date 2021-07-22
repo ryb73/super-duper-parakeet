@@ -13,7 +13,7 @@ export function useHashMap<K, V>(): [
   const timeout = useRef<NodeJS.Timeout>();
 
   useEffect(
-    () => () => (timeout.current ? clearTimeout(timeout.current) : undefined),
+    () => () => timeout.current ? clearTimeout(timeout.current) : undefined,
     [],
   );
 
