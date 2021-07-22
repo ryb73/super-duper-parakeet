@@ -3577,8 +3577,8 @@ __metadata:
     monocle-ts: ^2.3.9
     newtype-ts: ^0.3.4
     next: ">=9 <=11"
-    react: ^16.8.0
-    react-dom: ^16.8.0
+    react: ^16.8.0 || 17
+    react-dom: ^16.8.0 || 17
     react-query: ^3.13.12
   peerDependenciesMeta:
     "@emotion/react":
