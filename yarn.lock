@@ -3526,6 +3526,7 @@ __metadata:
     "@yarnpkg/pnpify": ^3.0.0-rc.3
     axios: ^0.21.1
     dayjs: ^1.10.4
+    dotenv: ^10.0.0
     eslint: ^7.25.0
     eslint-config-hardcore: ^19.2.0
     eslint-config-prettier: ^8.3.0
@@ -6548,6 +6549,13 @@ __metadata:
     no-case: ^3.0.4
     tslib: ^2.0.3
   checksum: 2d93626464927f533eaa66ba8c9b3a2dede6a324b5020fb90c46779ed629d50542f642aaac578e035e5cb141473c5f2c50eac232a8d8bf820ab471358d7bf587
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "dotenv@npm:10.0.0"
+  checksum: 9c45712e213de63bdb646b8e5344749b7566e25a67bbd3f03711d54e40eff10066c1f23eff0081d0949fda7c8efcc6e9e8bf18d0f023a8274f55f5d5f97bb6db
   languageName: node
   linkType: hard
 

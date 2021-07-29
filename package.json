@@ -40,6 +40,7 @@
     "@typescript-eslint/parser": "^4.22.0",
     "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "dayjs": "^1.10.4",
+    "dotenv": "^10.0.0",
     "eslint": "^7.25.0",
     "eslint-config-hardcore": "^19.2.0",
     "eslint-config-prettier": "^8.3.0",
