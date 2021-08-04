@@ -4,6 +4,8 @@ import { useDebounce } from "../src/useDebounce";
 import { wait } from "../src/wait";
 
 test(`works`, async () => {
+  expect.assertions(3);
+
   const { result } = renderHook(() => {
     const [value, setValue] = useState(0);
     const debounced = useDebounce(value, 10);

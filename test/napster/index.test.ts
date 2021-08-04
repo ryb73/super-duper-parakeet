@@ -42,10 +42,13 @@ async function config(): Promise<Config> {
 
 describeFn(`napster`, () => {
   test(`refreshAccessToken`, async () => {
+    expect.assertions(1);
     expect(await accessToken()).toBeDefined();
   });
 
   test(`getAccount`, async () => {
+    expect.assertions(1);
+
     expect(await getAccount(await config())).toStrictEqual<Account>({
       account: {
         cobrand: `40134`,

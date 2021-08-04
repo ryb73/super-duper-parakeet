@@ -19,7 +19,7 @@ describe(`non-null`, () => {
 describe(`null`, () => {
   test(`decode`, () => {
     const s = null;
-    expect(forceDecode(T, s)).toBe(null);
+    expect(forceDecode(T, s)).toBeNull();
   });
 
   test(`encode`, () => {

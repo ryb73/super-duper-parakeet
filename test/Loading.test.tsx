@@ -6,16 +6,26 @@ import "@testing-library/jest-dom/extend-expect";
 
 describe(`Loading`, () => {
   test(`base`, () => {
-    render(<Loading />).getByText(`Loading...`);
+    expect.assertions(1);
+
+    expect(() => render(<Loading />).getByText(`Loading...`)).not.toThrow();
   });
 
   describe(`retryCount`, () => {
     test(`base`, () => {
-      render(<Loading retryCount={2} />).getByText(`Loading... (retry 2)`);
+      expect.assertions(1);
+
+      expect(() =>
+        render(<Loading retryCount={2} />).getByText(`Loading... (retry 2)`),
+      ).not.toThrow();
     });
 
     test(`=== 0`, () => {
-      render(<Loading retryCount={0} />).getByText(`Loading...`);
+      expect.assertions(1);
+
+      expect(() =>
+        render(<Loading retryCount={0} />).getByText(`Loading...`),
+      ).not.toThrow();
     });
   });
 });

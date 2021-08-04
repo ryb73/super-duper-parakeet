@@ -3405,9 +3405,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ryb73/eslint-config@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@ryb73/eslint-config@npm:3.0.0"
+"@ryb73/eslint-config@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@ryb73/eslint-config@npm:4.0.0"
   peerDependencies:
     "@emotion/eslint-plugin": ^11.2.0
     "@shopify/eslint-plugin": ^40.2.1
@@ -3421,6 +3421,7 @@ __metadata:
     eslint-plugin-eslint-comments: ^3.2.0
     eslint-plugin-ext: ^0.1.0
     eslint-plugin-import: ^2.22.1
+    eslint-plugin-jest: ^24.4.0
     eslint-plugin-json: ^3.0.0
     eslint-plugin-no-constructor-bind: ^2.0.4
     eslint-plugin-no-use-extend-native: ^0.5.0
@@ -3435,6 +3436,7 @@ __metadata:
     eslint-plugin-sonarjs: ^0.9.1
     eslint-plugin-unicorn: ^34.0.0
     graphql: ^15.5.0
+    jest: ^27.0.0
     prettier: ^2.2.1
     putout: ^18.8.0
     typescript: ^4.2.4
@@ -3462,6 +3464,8 @@ __metadata:
     eslint-plugin-ext:
       optional: true
     eslint-plugin-import:
+      optional: true
+    eslint-plugin-jest:
       optional: true
     eslint-plugin-json:
       optional: true
@@ -3491,13 +3495,15 @@ __metadata:
       optional: true
     graphql:
       optional: true
+    jest:
+      optional: true
     prettier:
       optional: true
     putout:
       optional: true
     typescript:
       optional: true
-  checksum: 1d281ad6b58615e9b1f070306eb0d3ab72e57e0324633c9981807a860a75eb92b827ba2ec25c50cf0342365d176da0f23f2f6621267ff5054a6babb85a25db88
+  checksum: b435229ef5dcfd52d8f20d83f9488187b7fa37c0fac322d7482cd44110b6ef7e82ebc7a93c75ac1c223592a091f96cacd63144fc7ddb66f58eea578123682a47
   languageName: node
   linkType: hard
 
@@ -3511,7 +3517,7 @@ __metadata:
     "@emotion/react": ^11.1.5
     "@emotion/styled": ^11.3.0
     "@jest/types": ^27.0.2
-    "@ryb73/eslint-config": ^3.0.0
+    "@ryb73/eslint-config": ^4.0.0
     "@shopify/eslint-plugin": ^40.2.1
     "@testing-library/jest-dom": ^5.12.0
     "@testing-library/react": ^12.0.0

@@ -6,8 +6,9 @@ describe(`assert`, () => {
   });
 
   describe(`truthy`, () => {
-    test(`undefined`, () => expect(() => a(undefined)).toThrow());
-    test(`null`, () => expect(() => a(null)).toThrow());
-    test(`empty string`, () => expect(() => a(``)).toThrow());
+    test(`undefined`, () =>
+      expect(() => a(undefined)).toThrow(`Assertion failed`));
+    test(`null`, () => expect(() => a(null)).toThrow(`Assertion failed`));
+    test(`empty string`, () => expect(() => a(``)).toThrow(`Assertion failed`));
   });
 });

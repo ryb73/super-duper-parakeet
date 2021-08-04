@@ -51,6 +51,8 @@ function testRetries({
   text = `Loading... (retry 1)`,
 }: TestOptions = {}) {
   test(`retries`, async () => {
+    expect.hasAssertions();
+
     jest.spyOn(console, `error`).mockImplementation();
 
     const { result, waitFor } = renderSampleQuery({
@@ -66,26 +68,32 @@ function testRetries({
       </WhenSuccessful>,
     ).getByText(text);
 
-    await waitFor(() => result.current.isError);
+    await waitFor(() => expect(result.current.isError).toBe(true));
   });
 }
 
 function testIdle({ props, text = `Loading...` }: TestOptions = {}) {
   test(`idle`, () => {
+    expect.hasAssertions();
+
     const { result } = renderSampleQuery({
       queryOptions: { enabled: false },
     });
 
-    render(
-      <WhenSuccessful {...props} result={result.current}>
-        {renderSuccess}
-      </WhenSuccessful>,
-    ).getByText(text);
+    expect(() =>
+      render(
+        <WhenSuccessful {...props} result={result.current}>
+          {renderSuccess}
+        </WhenSuccessful>,
+      ).getByText(text),
+    ).not.toThrow();
   });
 }
 
 function testLoading({ props, text = `Loading...` }: TestOptions = {}) {
-  test(`loading`, () => {
+  test(`loading`, async () => {
+    expect.hasAssertions();
+
     const { result, waitFor } = renderSampleQuery();
 
     render(
@@ -94,7 +102,7 @@ function testLoading({ props, text = `Loading...` }: TestOptions = {}) {
       </WhenSuccessful>,
     ).getByText(text);
 
-    return waitFor(() => result.current.isSuccess);
+    await waitFor(() => expect(result.current.isSuccess).toBe(true));
   });
 }
 
@@ -104,28 +112,42 @@ describe(`WhenSuccessful`, () => {
   testRetries();
 
   test(`success`, async () => {
+    expect.hasAssertions();
+
     const { result, waitFor } = renderSampleQuery();
 
     await waitFor(() => result.current.isSuccess);
 
-    render(
-      <WhenSuccessful result={result.current}>{renderSuccess}</WhenSuccessful>,
-    ).getByText(`Success [695,false]`);
+    expect(() =>
+      render(
+        <WhenSuccessful result={result.current}>
+          {renderSuccess}
+        </WhenSuccessful>,
+      ).getByText(`Success [695,false]`),
+    ).not.toThrow();
   });
 
   test(`error`, async () => {
+    expect.hasAssertions();
+
     jest.spyOn(console, `error`).mockImplementation();
 
     const { result, waitFor } = renderSampleQuery({ error: true });
 
     await waitFor(() => result.current.isError);
 
-    render(
-      <WhenSuccessful result={result.current}>{renderSuccess}</WhenSuccessful>,
-    ).getByText(`Error :(`);
+    expect(() =>
+      render(
+        <WhenSuccessful result={result.current}>
+          {renderSuccess}
+        </WhenSuccessful>,
+      ).getByText(`Error :(`),
+    ).not.toThrow();
   });
 
   test(`refetching`, async () => {
+    expect.hasAssertions();
+
     const { result, waitFor } = renderSampleQuery();
 
     await waitFor(() => result.current.isSuccess);
@@ -138,9 +160,13 @@ describe(`WhenSuccessful`, () => {
 
     await waitFor(() => result.current.isFetching);
 
-    render(
-      <WhenSuccessful result={result.current}>{renderSuccess}</WhenSuccessful>,
-    ).getByText(`Success [695,true]`);
+    expect(() =>
+      render(
+        <WhenSuccessful result={result.current}>
+          {renderSuccess}
+        </WhenSuccessful>,
+      ).getByText(`Success [695,true]`),
+    ).not.toThrow();
   });
 
   describe(`LoadingIndicator`, () => {

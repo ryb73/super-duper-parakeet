@@ -4,6 +4,8 @@ import type { MinimalResponse } from "../../src/server/decodeInput";
 import { decodeInput } from "../../src/server/decodeInput";
 
 test(`no existing data`, async () => {
+  expect.assertions(3);
+
   const req = `reqq`;
 
   const res = {
@@ -24,6 +26,8 @@ test(`no existing data`, async () => {
 });
 
 test(`existing data`, async () => {
+  expect.assertions(3);
+
   const req = `reqq`;
 
   const res = {
@@ -61,6 +65,8 @@ test(`existing data`, async () => {
 // This shouldn't really be relied upon in practice, but I want to be sure nothing
 // weird happens if the programmer passes in data with an existing `input` key
 test(`existing input key`, async () => {
+  expect.assertions(3);
+
   const req = `reqq`;
 
   const res = {
@@ -95,6 +101,8 @@ test(`existing input key`, async () => {
 
 describe(`error`, () => {
   test(`base`, async () => {
+    expect.assertions(3);
+
     const req = `reqq`;
 
     const res = {
@@ -113,6 +121,8 @@ describe(`error`, () => {
   });
 
   test(`onError`, async () => {
+    expect.assertions(4);
+
     const res = {
       status: jest.fn(),
       end: jest.fn(),

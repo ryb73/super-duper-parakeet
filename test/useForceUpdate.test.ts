@@ -45,5 +45,5 @@ test(`doesn't update if unmounted`, () => {
 
   act(() => forceUpdate());
 
-  expect(spy.mock.calls.length).toBe(0);
+  expect(spy.mock.calls).toHaveLength(0);
 });
