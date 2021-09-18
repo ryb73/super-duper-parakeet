@@ -5,19 +5,6 @@ module.exports = {
 
   ignorePatterns: [`lib/`, `.yarn/`, `coverage/`],
 
-  overrides: [
-    {
-      files: [`./.eslintrc.js`],
-      parserOptions: {
-        sourceType: `script`,
-      },
-    },
-  ],
-
-  parserOptions: {
-    sourceType: `module`,
-  },
-
   rules: {
     "prefer-destructuring": `off`,
   },
