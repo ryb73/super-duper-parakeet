@@ -1,8 +1,6 @@
 import dayjs from "dayjs";
-import { string } from "io-ts";
 import { DayUtc } from "../../src/io/DayUtc";
 import { forceDecode } from "../../src/io/forceDecode";
-import { nullable } from "../../src/io/nullable";
 
 describe(`basic`, () => {
   test(`decode`, () => {
