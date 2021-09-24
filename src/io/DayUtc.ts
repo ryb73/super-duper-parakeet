@@ -25,7 +25,7 @@ const DayUtc = string.pipe(
     `DayUtcFromString`,
     (v): v is Dayjs => isDayjs(v),
     (s, c) => {
-      const result = dayjs(s);
+      const result = dayjs(s, { utc: true });
       if (!result.isValid()) return failure(s, c, `Invalid Date`);
       return success(cache.get(result));
     },
