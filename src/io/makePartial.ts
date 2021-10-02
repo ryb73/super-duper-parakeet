@@ -1,0 +1,114 @@
+import type {
+  ExactC,
+  IntersectionC,
+  PartialC,
+  Props,
+  TypeC,
+  UnionC,
+} from "io-ts";
+import {
+  ExactType,
+  InterfaceType,
+  IntersectionType,
+  PartialType,
+  UnionType,
+  exact,
+  intersection,
+  partial,
+  union,
+} from "io-ts";
+import type { HasPropsC } from "./HasPropsC";
+
+type PropsOfHasProps<T extends HasPropsC> = T extends ExactC<TypeC<any>>
+  ? T["type"]["props"]
+  : T extends HasPropsC<infer P>
+  ? P
+  : never;
+
+type ClassOfHasProps<T extends HasPropsC> = T extends HasPropsC<any, infer C>
+  ? C
+  : never;
+
+type UnionClassesOfHasProps<T extends HasPropsC> = T extends HasPropsC<
+  any,
+  any,
+  infer M
+>
+  ? M
+  : never;
+
+type PartializeClassArray<
+  CS extends [HasPropsC, HasPropsC, ...HasPropsC[]],
+  C1 extends HasPropsC = CS[0],
+  C2 extends HasPropsC = CS[1],
+> = CS extends [C1, C2]
+  ? [MakePartial<C1>, MakePartial<C2>]
+  : CS extends [C1, ...infer Rest]
+  ? Rest extends [HasPropsC, HasPropsC, ...HasPropsC[]]
+    ? [MakePartial<C1>, ...PartializeClassArray<Rest>]
+    : never
+  : never;
+
+type MakePartial<T extends HasPropsC> = T extends TypeC<any>
+  ? PartialC<PropsOfHasProps<T>>
+  : T extends PartialC<any>
+  ? T
+  : T extends ExactC<any>
+  ? ExactC<MakePartial<T["type"]>>
+  : T extends UnionC<any>
+  ? UnionC<PartializeClassArray<T["types"]>>
+  : T extends IntersectionC<any>
+  ? IntersectionC<PartializeClassArray<T["types"]>>
+  : never;
+
+export function makePartial<
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
+  T extends HasPropsC<P, C, M>,
+  P extends Props = PropsOfHasProps<T>,
+  C extends PartialC<P> | TypeC<P> = ClassOfHasProps<T>,
+  M extends [
+    HasPropsC<P, C>,
+    HasPropsC<P, C>,
+    ...HasPropsC<P, C>[]
+  ] = UnionClassesOfHasProps<T>,
+>(T: T): MakePartial<T> {
+  if (T instanceof InterfaceType) {
+    return partial(T.props) as MakePartial<T>;
+  }
+
+  if (T instanceof PartialType) {
+    return T as unknown as MakePartial<T>;
+  }
+
+  if (T instanceof ExactType) {
+    const inner = makePartial<PartialC<P> | TypeC<P>, P, C, M>(T.type);
+    return exact(inner) as unknown as MakePartial<T>;
+  }
+
+  if (T instanceof UnionType) {
+    const [One, Two, ...Rest] = T.types;
+    return union([
+      makePartial(One as HasPropsC),
+      makePartial(Two as HasPropsC),
+      ...(Rest.map((UT) => makePartial(UT as HasPropsC)) as any),
+    ]) as unknown as MakePartial<T>;
+  }
+
+  if (T instanceof IntersectionType) {
+    const [One, Two, Three, Four, Five] = T.types;
+    return intersection(
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      [
+        makePartial(One as HasPropsC),
+        makePartial(Two as HasPropsC),
+        /* eslint-disable @typescript-eslint/no-unnecessary-condition */
+        Three && makePartial(Three as HasPropsC),
+        Four && makePartial(Four as HasPropsC),
+        Five && makePartial(Five as HasPropsC),
+      ].filter((v) => !!v) as any,
+      /* eslint-enable @typescript-eslint/no-unnecessary-condition */
+    ) as unknown as MakePartial<T>;
+  }
+
+  throw new Error(`Unexpected type: ${(T as HasPropsC).name}`);
+}

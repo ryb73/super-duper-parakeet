@@ -39,6 +39,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "@yarnpkg/pnpify": "^3.0.0-rc.3",
+    "assert": "^2.0.0",
     "dayjs": "^1.10.4",
     "dotenv": "^10.0.0",
     "eslint": "^7.25.0",
@@ -78,7 +79,7 @@
     "react-test-renderer": "^17.0.2",
     "ts-jest": "^27.0.3",
     "ts-node": "^10.1.0",
-    "typescript": "4.2.4"
+    "typescript": "4.4.3"
   },
   "peerDependencies": {
     "@emotion/react": "*",

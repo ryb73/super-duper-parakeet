@@ -3684,6 +3684,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^4.22.0
     "@typescript-eslint/parser": ^4.22.0
     "@yarnpkg/pnpify": ^3.0.0-rc.3
+    assert: ^2.0.0
     axios: ^0.21.1
     dayjs: ^1.10.4
     dotenv: ^10.0.0
@@ -3727,7 +3728,7 @@ __metadata:
     react-test-renderer: ^17.0.2
     ts-jest: ^27.0.3
     ts-node: ^10.1.0
-    typescript: 4.2.4
+    typescript: 4.4.3
   peerDependencies:
     "@emotion/react": "*"
     dayjs: "*"
@@ -4958,7 +4959,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"assert@npm:2.0.0":
+"assert@npm:2.0.0, assert@npm:^2.0.0":
   version: 2.0.0
   resolution: "assert@npm:2.0.0"
   dependencies:
@@ -8260,9 +8261,9 @@ __metadata:
   linkType: hard
 
 "fp-ts@npm:^2.10.4":
-  version: 2.11.2
-  resolution: "fp-ts@npm:2.11.2"
-  checksum: 84a524ef320b9376c653ac0d65ca036a3d9db1998711db9e0f72a1d63d158590ae6d3cde850ccbea652fa615de4ff6759af49e977b7526a9ede1c736055a8f5a
+  version: 2.11.4
+  resolution: "fp-ts@npm:2.11.4"
+  checksum: aeb67498c3ecea0c6659c71732a09e828cf1e6153c5e74e91cebd7aaff2ea307329b7f56be4232e2ed3115229fef5594b37e6abe793f3ae9490abe304a8588a5
   languageName: node
   linkType: hard
 
@@ -15679,17 +15680,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-typescript@4.2.4:
-  version: 4.2.4
-  resolution: "typescript@npm:4.2.4"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 89c397df192f239359ad798b96d8e8d552e12c0c189ac5676cec4c20c410d6eec636b8e59a88f2aef0a56d961a9678d99c400099be9b7cae2f7b062eb4b7b171
-  languageName: node
-  linkType: hard
-
-typescript@^4.3.5:
+"typescript@4.4.3, typescript@^4.3.5":
   version: 4.4.3
   resolution: "typescript@npm:4.4.3"
   bin:
@@ -15699,17 +15690,7 @@ typescript@^4.3.5:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.2.4#~builtin<compat/typescript>":
-  version: 4.2.4
-  resolution: "typescript@patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=32657b"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 91772e5fc70895a8f645837cb91d14af95a11b173043ed0dcf12c1069f9dcf5c3c82bc7212c217c9a2cb488900dd2cda3f40f543bed5d149428df13c90c10098
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@^4.3.5#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.4.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.3.5#~builtin<compat/typescript>":
   version: 4.4.3
   resolution: "typescript@patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=32657b"
   bin:
