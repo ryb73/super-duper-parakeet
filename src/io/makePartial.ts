@@ -17,25 +17,12 @@ import {
   partial,
   union,
 } from "io-ts";
-import type { HasPropsC } from "./HasPropsC";
-
-type PropsOfHasProps<T extends HasPropsC> = T extends ExactC<TypeC<any>>
-  ? T["type"]["props"]
-  : T extends HasPropsC<infer P>
-  ? P
-  : never;
-
-type ClassOfHasProps<T extends HasPropsC> = T extends HasPropsC<any, infer C>
-  ? C
-  : never;
-
-type UnionClassesOfHasProps<T extends HasPropsC> = T extends HasPropsC<
-  any,
-  any,
-  infer M
->
-  ? M
-  : never;
+import type {
+  ClassOfHasProps,
+  ClassesOfHasProps,
+  HasPropsC,
+  PropsOfHasProps,
+} from "./HasPropsC";
 
 type PartializeClassArray<
   CS extends [HasPropsC, HasPropsC, ...HasPropsC[]],
@@ -63,14 +50,14 @@ type MakePartial<T extends HasPropsC> = T extends TypeC<any>
 
 export function makePartial<
   // eslint-disable-next-line @typescript-eslint/no-redeclare
-  T extends HasPropsC<P, C, M>,
+  T extends HasPropsC<P, C, CS>,
   P extends Props = PropsOfHasProps<T>,
   C extends PartialC<P> | TypeC<P> = ClassOfHasProps<T>,
-  M extends [
+  CS extends [
     HasPropsC<P, C>,
     HasPropsC<P, C>,
     ...HasPropsC<P, C>[]
-  ] = UnionClassesOfHasProps<T>,
+  ] = ClassesOfHasProps<T>,
 >(T: T): MakePartial<T> {
   if (T instanceof InterfaceType) {
     return partial(T.props) as MakePartial<T>;
@@ -81,7 +68,7 @@ export function makePartial<
   }
 
   if (T instanceof ExactType) {
-    const inner = makePartial<PartialC<P> | TypeC<P>, P, C, M>(T.type);
+    const inner = makePartial<PartialC<P> | TypeC<P>, P, C, CS>(T.type);
     return exact(inner) as unknown as MakePartial<T>;
   }
 
@@ -90,7 +77,7 @@ export function makePartial<
     return union([
       makePartial(One as HasPropsC),
       makePartial(Two as HasPropsC),
-      ...(Rest.map((UT) => makePartial(UT as HasPropsC)) as any),
+      ...Rest.map((UT) => makePartial(UT as HasPropsC)),
     ]) as unknown as MakePartial<T>;
   }
 
