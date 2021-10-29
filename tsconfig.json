@@ -13,7 +13,10 @@
     "strictNullChecks": true,
     "outDir": "lib",
     "declaration": true,
-    "jsx": "react"
+    "jsx": "react",
+    //"noPropertyAccessFromIndexSignature": true,
+    //"noUncheckedIndexedAccess": true
+
   },
   "exclude": ["node_modules", "lib"],
   "include": [
