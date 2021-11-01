@@ -1,5 +1,5 @@
 import type { Int } from "io-ts";
-import { zero } from "./constants";
+import { one, zero } from "./constants";
 
 export function addInt<T extends Int>(...ints: T[]): T {
   // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
@@ -8,6 +8,10 @@ export function addInt<T extends Int>(...ints: T[]): T {
 
 export function subtractInt<T extends Int>(minuend: T, ...subtrahends: T[]): T {
   return subtrahends.reduce<Int>((a, b) => (a - b) as Int, minuend) as T;
+}
+
+export function multiplyInt<T extends Int>(...ints: T[]): T {
+  return ints.reduce<Int>((a, b) => (a * b) as Int, one) as T;
 }
 
 export function minInt<T extends Int>(...values: T[]): T {
