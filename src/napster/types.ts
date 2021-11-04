@@ -12,7 +12,7 @@ import {
   union,
 } from "io-ts";
 import { BooleanFromString } from "io-ts-types";
-import { brandedString } from "../io/brandedString";
+import { brandedNonEmptyString } from "../io/brandedString";
 import { DayUtc } from "../io/DayUtc";
 import { nullable } from "../io/nullable";
 
@@ -22,7 +22,7 @@ export type UserIdBrand = {
   readonly NapsterUserIdBrand: unique symbol;
 };
 
-const UserId = brandedString<UserIdBrand>(`NapsterUserId`);
+const UserId = brandedNonEmptyString<UserIdBrand>(`NapsterUserId`);
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 type UserId = TypeOf<typeof UserId>;
 export { UserId };
