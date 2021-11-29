@@ -35,4 +35,4 @@ function forceDecode<A, O, I>(
     }),
   );
 }
-export { forceDecode };
+export { forceDecode, forceDecode as fd };
