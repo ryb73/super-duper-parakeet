@@ -1,8 +1,11 @@
-import type { RefObject } from "react";
 import { useEffect } from "react";
 
+type CanceledRef = {
+  readonly current: boolean;
+};
+
 export function useAsyncEffect(
-  effect: (canceled: RefObject<boolean>) => Promise<(() => void) | void>,
+  effect: (canceled: CanceledRef) => Promise<(() => void) | void>,
 ) {
   useEffect(() => {
     const canceled = { current: false };
