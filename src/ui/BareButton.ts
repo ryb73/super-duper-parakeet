@@ -4,5 +4,6 @@ export const BareButton = styled.button({
   background: `none`,
   border: 0,
   color: `inherit`,
+  letterSpacing: `inherit`,
   padding: 0,
 });
