@@ -19,7 +19,6 @@ test(`useGetter`, () => {
   act(() => result.current.setValue(`after`));
 
   // (1) remain constant between re-renders
-  // eslint-disable-next-line unicorn/consistent-destructuring
   expect(result.current.getValue).toBe(getValue);
 
   // (2) should aways return the current value

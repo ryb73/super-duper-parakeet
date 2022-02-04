@@ -27,7 +27,6 @@ test(`doesn't create new function on every invocation`, () => {
 
   act(() => result.current.forceUpdate());
 
-  // eslint-disable-next-line unicorn/consistent-destructuring
   expect(result.current.forceUpdate).toBe(forceUpdate);
 });
 
