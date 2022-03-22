@@ -36,7 +36,7 @@ type PartializeClassArray<
     : never
   : never;
 
-type MakePartial<T extends HasPropsC> = T extends TypeC<any>
+export type MakePartial<T extends HasPropsC> = T extends TypeC<any>
   ? PartialC<PropsOfHasProps<T>>
   : T extends PartialC<any>
   ? T
