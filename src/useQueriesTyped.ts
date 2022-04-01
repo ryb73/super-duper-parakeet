@@ -1,8 +1,5 @@
 import type { UseQueryOptions, UseQueryResult } from "react-query";
 import { useQueries } from "react-query";
-// TODO: remove this when TS upgraded
-// eslint-disable-next-line @typescript-eslint/no-shadow
-import type { Awaited } from "./Awaited";
 
 // https://github.com/tannerlinsley/react-query/issues/1675
 export function useQueriesTyped<
