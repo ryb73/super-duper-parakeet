@@ -3608,7 +3608,6 @@ __metadata:
     io-ts-reporters: ^2.0.0
     io-ts-types: ^0.5.16
     jest: ^27.0.4
-    lodash: ^4.17.21
     monocle-ts: ^2.3.9
     newtype-ts: ^0.3.4
     next: 12.1.4
@@ -3623,11 +3622,16 @@ __metadata:
     typescript: 4.6.3
   peerDependencies:
     "@emotion/react": "*"
+    "@emotion/styled": ^11.3.0
+    axios: ^0.26.1
     dayjs: "*"
     fp-ts: ^2.10.4
+    immer: ^9.0.2
     io-ts: ^2.2.16
+    io-ts-reporters: ^2.0.0
     io-ts-types: ^0.5.16
     jest: ^26.0.0 || ^27.0.0
+    lodash: ^4.17.21
     monocle-ts: ^2.3.9
     newtype-ts: ^0.3.4
     next: ">=9 <=12"
@@ -3637,15 +3641,25 @@ __metadata:
   peerDependenciesMeta:
     "@emotion/react":
       optional: true
+    "@emotion/styled":
+      optional: true
+    axios:
+      optional: true
     dayjs:
       optional: true
     fp-ts:
       optional: true
+    immer:
+      optional: true
     io-ts:
+      optional: true
+    io-ts-reporters:
       optional: true
     io-ts-types:
       optional: true
     jest:
+      optional: true
+    lodash:
       optional: true
     monocle-ts:
       optional: true

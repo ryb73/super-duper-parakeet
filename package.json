@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.14.5",
     "@emotion/eslint-plugin": "^11.7.0",
     "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
     "@jest/types": "^27.0.2",
     "@ryb73/eslint-config": "^6.0.5",
     "@shopify/eslint-plugin": "^41.2.0",
@@ -40,6 +41,7 @@
     "@typescript-eslint/parser": "^5.15.0",
     "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "assert": "^2.0.0",
+    "axios": "^0.26.1",
     "dayjs": "^1.10.4",
     "dotenv": "^16.0.0",
     "eslint": "^8.11.0",
@@ -67,7 +69,9 @@
     "eslint-plugin-unicorn": "^41.0.0",
     "fp-ts": "^2.10.4",
     "graphql": "^15.5.0",
+    "immer": "^9.0.2",
     "io-ts": "^2.2.16",
+    "io-ts-reporters": "^2.0.0",
     "io-ts-types": "^0.5.16",
     "jest": "^27.0.4",
     "monocle-ts": "^2.3.9",
@@ -85,11 +89,16 @@
   },
   "peerDependencies": {
     "@emotion/react": "*",
+    "@emotion/styled": "^11.3.0",
+    "axios": "^0.26.1",
     "dayjs": "*",
     "fp-ts": "^2.10.4",
+    "immer": "^9.0.2",
     "io-ts": "^2.2.16",
+    "io-ts-reporters": "^2.0.0",
     "io-ts-types": "^0.5.16",
     "jest": "^26.0.0 || ^27.0.0",
+    "lodash": "^4.17.21",
     "monocle-ts": "^2.3.9",
     "newtype-ts": "^0.3.4",
     "next": ">=9 <=12",
@@ -101,19 +110,34 @@
     "@emotion/react": {
       "optional": true
     },
+    "@emotion/styled": {
+      "optional": true
+    },
+    "axios": {
+      "optional": true
+    },
     "dayjs": {
       "optional": true
     },
     "fp-ts": {
       "optional": true
     },
+    "immer": {
+      "optional": true
+    },
     "io-ts": {
+      "optional": true
+    },
+    "io-ts-reporters": {
       "optional": true
     },
     "io-ts-types": {
       "optional": true
     },
     "jest": {
+      "optional": true
+    },
+    "lodash": {
       "optional": true
     },
     "monocle-ts": {
@@ -134,12 +158,5 @@
     "react-query": {
       "optional": true
     }
-  },
-  "dependencies": {
-    "@emotion/styled": "^11.3.0",
-    "axios": "^0.26.1",
-    "immer": "^9.0.2",
-    "io-ts-reporters": "^2.0.0",
-    "lodash": "^4.17.21"
   }
 }
