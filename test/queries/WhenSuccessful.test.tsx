@@ -12,7 +12,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 type SampleQueryOptions = {
   error?: boolean;
-  queryOptions?: UseQueryOptions;
+  queryOptions?: UseQueryOptions<unknown, unknown, unknown, `WhenSuccessful`>;
 };
 
 function renderSampleQuery({ error, queryOptions }: SampleQueryOptions = {}) {
