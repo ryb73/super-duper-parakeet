@@ -3608,6 +3608,7 @@ __metadata:
     io-ts-reporters: ^2.0.0
     io-ts-types: ^0.5.16
     jest: ^27.0.4
+    lodash: ^4.17.21
     monocle-ts: ^2.3.9
     newtype-ts: ^0.3.4
     next: 12.1.4
