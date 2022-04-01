@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 export type JsonOr<T> =
   | JsonArrayOr<T>
   | JsonRecordOr<T>
@@ -6,6 +7,7 @@ export type JsonOr<T> =
   | number
   | string
   | null;
+/* eslint-enable @typescript-eslint/no-use-before-define */
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type JsonArrayOr<T> = readonly JsonOr<T>[] & {};

@@ -1,4 +1,5 @@
-export type Scope =  // https://developer.spotify.com/documentation/general/guides/scopes/
+// https://developer.spotify.com/documentation/general/guides/scopes/
+export type Scope =
   | "app-remote-control"
   | "playlist-modify-private"
   | "playlist-modify-public"

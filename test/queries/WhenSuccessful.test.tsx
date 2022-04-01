@@ -1,5 +1,5 @@
 import type { PropsOf } from "@emotion/react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import type { QueryObserverSuccessResult, UseQueryOptions } from "react-query";
@@ -66,7 +66,8 @@ function testRetries({
       <WhenSuccessful {...props} result={result.current}>
         {renderSuccess}
       </WhenSuccessful>,
-    ).getByText(text);
+    );
+    expect(screen.getByText(text)).toBeInTheDocument();
 
     await waitFor(() => expect(result.current.isError).toBe(true));
   });
@@ -80,13 +81,12 @@ function testIdle({ props, text = `Loading...` }: TestOptions = {}) {
       queryOptions: { enabled: false },
     });
 
-    expect(() =>
-      render(
-        <WhenSuccessful {...props} result={result.current}>
-          {renderSuccess}
-        </WhenSuccessful>,
-      ).getByText(text),
-    ).not.toThrow();
+    render(
+      <WhenSuccessful {...props} result={result.current}>
+        {renderSuccess}
+      </WhenSuccessful>,
+    );
+    expect(() => screen.getByText(text)).not.toThrow();
   });
 }
 
@@ -100,7 +100,8 @@ function testLoading({ props, text = `Loading...` }: TestOptions = {}) {
       <WhenSuccessful {...props} result={result.current}>
         {renderSuccess}
       </WhenSuccessful>,
-    ).getByText(text);
+    );
+    expect(screen.getByText(text)).toBeInTheDocument();
 
     await waitFor(() => expect(result.current.isSuccess).toBe(true));
   });
@@ -118,13 +119,11 @@ describe(`WhenSuccessful`, () => {
 
     await waitFor(() => result.current.isSuccess);
 
-    expect(() =>
-      render(
-        <WhenSuccessful result={result.current}>
-          {renderSuccess}
-        </WhenSuccessful>,
-      ).getByText(`Success [695,false]`),
-    ).not.toThrow();
+    render(
+      <WhenSuccessful result={result.current}>{renderSuccess}</WhenSuccessful>,
+    );
+
+    expect(() => screen.getByText(`Success [695,false]`)).not.toThrow();
   });
 
   test(`error`, async () => {
@@ -136,13 +135,11 @@ describe(`WhenSuccessful`, () => {
 
     await waitFor(() => result.current.isError);
 
-    expect(() =>
-      render(
-        <WhenSuccessful result={result.current}>
-          {renderSuccess}
-        </WhenSuccessful>,
-      ).getByText(`Error :(`),
-    ).not.toThrow();
+    render(
+      <WhenSuccessful result={result.current}>{renderSuccess}</WhenSuccessful>,
+    );
+
+    expect(() => screen.getByText(`Error :(`)).not.toThrow();
   });
 
   test(`refetching`, async () => {
@@ -160,13 +157,11 @@ describe(`WhenSuccessful`, () => {
 
     await waitFor(() => result.current.isFetching);
 
-    expect(() =>
-      render(
-        <WhenSuccessful result={result.current}>
-          {renderSuccess}
-        </WhenSuccessful>,
-      ).getByText(`Success [695,true]`),
-    ).not.toThrow();
+    render(
+      <WhenSuccessful result={result.current}>{renderSuccess}</WhenSuccessful>,
+    );
+
+    expect(() => screen.getByText(`Success [695,true]`)).not.toThrow();
   });
 
   describe(`LoadingIndicator`, () => {

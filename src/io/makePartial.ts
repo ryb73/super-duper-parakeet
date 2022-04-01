@@ -24,6 +24,7 @@ import type {
   PropsOfHasProps,
 } from "./HasPropsC";
 
+/* eslint-disable @typescript-eslint/no-use-before-define */
 type PartializeClassArray<
   CS extends [HasPropsC, HasPropsC, ...HasPropsC[]],
   C1 extends HasPropsC = CS[0],
@@ -35,6 +36,7 @@ type PartializeClassArray<
     ? [MakePartial<C1>, ...PartializeClassArray<Rest>]
     : never
   : never;
+/* eslint-enable @typescript-eslint/no-use-before-define */
 
 export type MakePartial<T extends HasPropsC> = T extends TypeC<any>
   ? PartialC<PropsOfHasProps<T>>
@@ -49,6 +51,7 @@ export type MakePartial<T extends HasPropsC> = T extends TypeC<any>
   : never;
 
 export function makePartial<
+  /* eslint-disable @typescript-eslint/no-use-before-define */
   // eslint-disable-next-line @typescript-eslint/no-redeclare
   T extends HasPropsC<P, C, CS>,
   P extends Props = PropsOfHasProps<T>,
@@ -56,8 +59,9 @@ export function makePartial<
   CS extends [
     HasPropsC<P, C>,
     HasPropsC<P, C>,
-    ...HasPropsC<P, C>[]
+    ...HasPropsC<P, C>[],
   ] = ClassesOfHasProps<T>,
+  /* eslint-enable @typescript-eslint/no-use-before-define */
 >(T: T): MakePartial<T> {
   if (T instanceof InterfaceType) {
     return partial(T.props) as MakePartial<T>;

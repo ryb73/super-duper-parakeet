@@ -1,24 +1,22 @@
 import axios from "axios";
 import type { TypeOf } from "io-ts";
-import { Int, exact, string, type } from "io-ts";
+import { Int, strict, string } from "io-ts";
 import { forceDecode } from "../io/forceDecode";
 
-const External = exact(
-  type({
-    access_token: string,
-    expires_in: Int,
-    refresh_token: string,
-  }),
-);
+const ExternalTokens = strict({
+  access_token: string,
+  expires_in: Int,
+  refresh_token: string,
+});
 // eslint-disable-next-line @typescript-eslint/no-redeclare
-type External = TypeOf<typeof External>;
+type ExternalTokens = TypeOf<typeof ExternalTokens>;
 
 export async function refreshAccessToken(
   apiKey: string,
   secret: string,
   redirectUri: string,
   refreshToken: string,
-): Promise<External> {
+): Promise<ExternalTokens> {
   const { data } = await axios.post<unknown>(
     `https://api.napster.com/oauth/access_token`,
     {
@@ -30,5 +28,5 @@ export async function refreshAccessToken(
     },
   );
 
-  return forceDecode(External, data);
+  return forceDecode(ExternalTokens, data);
 }

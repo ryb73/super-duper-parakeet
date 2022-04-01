@@ -44,5 +44,6 @@ export function useHashMap<K, V>(): [
     [hashMap, scheduleUpdate],
   );
 
+  // eslint-disable-next-line @shopify/react-hooks-strict-return
   return [hashMap, set, remove, lastModified.current];
 }

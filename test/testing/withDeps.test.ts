@@ -35,7 +35,7 @@ describe(`all`, () => {
       }),
     });
 
-    afterAll(async () => thenned);
+    afterAll(async () => await thenned);
   });
 });
 
@@ -74,6 +74,6 @@ describe(`each`, () => {
       }),
     });
 
-    afterAll(async () => thenned);
+    afterAll(async () => await thenned);
   });
 });

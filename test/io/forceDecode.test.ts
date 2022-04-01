@@ -13,8 +13,6 @@ describe(`basic`, () => {
     test(`basic`, () => {
       const notS = 9;
       const message =
-        // TODO: lint is failing on the escaped \]. submit issue to the repo for this rule?
-        // eslint-disable-next-line optimize-regex/optimize-regex
         /Decode failed:\s+9\s+\["Expecting string but instead got: 9"\]/u;
       expect(() => forceDecode(T, notS)).toThrow(message);
     });

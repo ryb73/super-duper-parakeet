@@ -1,3 +1,4 @@
+/* eslint-disable import/no-deprecated */
 import { assert as a, defined, isDefined, n } from "../src/type-checks";
 
 describe(`assert`, () => {
@@ -33,7 +34,6 @@ describe(`defined`, () => {
 });
 
 describe(`isNull`, () => {
-  /* eslint-disable jest/no-if */
   test(`null`, () => {
     const maybe = null as number | null;
 
@@ -47,7 +47,6 @@ describe(`isNull`, () => {
 
     expect(res).toBe(true);
   });
-  /* eslint-enable jest/no-if */
 
   test(`not null`, () => {
     expect(n(0)).toBe(false);
@@ -55,7 +54,6 @@ describe(`isNull`, () => {
 });
 
 describe(`isDefied`, () => {
-  /* eslint-disable jest/no-if */
   test(`null`, () => {
     const maybe = null as number | null | undefined;
 
@@ -69,7 +67,6 @@ describe(`isDefied`, () => {
 
     expect(res).toBe(false);
   });
-  /* eslint-enable jest/no-if */
 
   test(`undefined`, () => {
     expect(isDefined(undefined)).toBe(false);

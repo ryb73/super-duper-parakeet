@@ -4,7 +4,7 @@ import { Type, failure, string, success } from "io-ts";
 
 // Cache days mainly to prevent equality checks from failing leading to unnecessary re-renders
 // This is possible because Dayjs objects are immutable (TODO: they are immutable, right?)
-class Cache {
+class DateCache {
   private readonly dayMap = new Map<string, Dayjs>();
 
   public get(day: Dayjs) {
@@ -18,7 +18,7 @@ class Cache {
   }
 }
 
-const cache = new Cache();
+const cache = new DateCache();
 
 const DayUtc = string.pipe(
   new Type<Dayjs, string, string>(

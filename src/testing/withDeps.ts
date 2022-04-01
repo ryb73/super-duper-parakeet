@@ -1,3 +1,4 @@
+/* eslint-disable import/no-deprecated */
 import { assert } from "../type-checks";
 
 type ValueFn<T> = () => PromiseLike<T> | T;

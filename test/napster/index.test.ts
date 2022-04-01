@@ -43,7 +43,7 @@ async function config(): Promise<Config> {
 describeFn(`napster`, () => {
   test(`refreshAccessToken`, async () => {
     expect.assertions(1);
-    await expect(accessToken()).resolves.toBeDefined();
+    await expect(accessToken()).resolves.not.toBe(``);
   });
 
   test(`getAccount`, async () => {

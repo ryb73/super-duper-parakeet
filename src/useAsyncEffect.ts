@@ -12,7 +12,6 @@ export function useAsyncEffect(
 
     let destructor: (() => void) | void;
 
-    // eslint-disable-next-line no-void
     void effect(canceled).then((result) => {
       if (canceled.current && result) {
         console.warn(

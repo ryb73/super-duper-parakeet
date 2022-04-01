@@ -37,6 +37,7 @@ type RenameKeyLeafType<
   ? PartialC<RenameKey<T["props"], Old, New>>
   : never;
 
+/* eslint-disable @typescript-eslint/no-use-before-define */
 type RenameKeyClassArray<
   CS extends [HasPropsC, HasPropsC, ...HasPropsC[]],
   Old extends string,
@@ -50,6 +51,7 @@ type RenameKeyClassArray<
     ? [RenameKeyType<C1, Old, New>, ...RenameKeyClassArray<Rest, Old, New>]
     : never
   : never;
+/* eslint-enable @typescript-eslint/no-use-before-define */
 
 export type RenameKeyType<
   T extends HasPropsC,
@@ -122,6 +124,7 @@ function renameKeyExactType<
 }
 
 export function renameKey<
+  /* eslint-disable @typescript-eslint/no-use-before-define */
   Old extends string,
   New extends string,
   // eslint-disable-next-line @typescript-eslint/no-redeclare
@@ -131,8 +134,9 @@ export function renameKey<
   CS extends [
     HasPropsC<P, C>,
     HasPropsC<P, C>,
-    ...HasPropsC<P, C>[]
+    ...HasPropsC<P, C>[],
   ] = ClassesOfHasProps<T>,
+  /* eslint-enable @typescript-eslint/no-use-before-define */
 >(T: T, oldKey: Old, newKey: New): RenameKeyType<T, Old, New> {
   if (T instanceof InterfaceType || T instanceof PartialType) {
     return renameKeyLeafType(T, oldKey, newKey);
