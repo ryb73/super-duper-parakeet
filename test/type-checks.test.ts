@@ -53,7 +53,7 @@ describe(`isNull`, () => {
   });
 });
 
-describe(`isDefied`, () => {
+describe(`isDefined`, () => {
   test(`null`, () => {
     const maybe = null as number | null | undefined;
 

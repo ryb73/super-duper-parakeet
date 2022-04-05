@@ -15,7 +15,8 @@
     "watch": "tsc --pretty -w",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "lint-strict": "yarn lint --max-warnings 0",
-    "test": "jest --coverage"
+    "test-nc": "jest",
+    "test": "yarn test-nc --coverage"
   },
   "files": [
     "lib/src/"
