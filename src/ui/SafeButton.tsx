@@ -1,12 +1,11 @@
-import type { ButtonHTMLAttributes, ClassAttributes } from "react";
-import React from "react";
+import type { ButtonHTMLAttributes } from "react";
+import React, { forwardRef } from "react";
 import type { O } from "ts-toolbelt";
 
-export function SafeButton(
-  props: ClassAttributes<HTMLButtonElement> &
-    JSX.IntrinsicAttributes &
-    O.Required<ButtonHTMLAttributes<HTMLButtonElement>, "type">,
-) {
+export const SafeButton = forwardRef<
+  HTMLButtonElement,
+  O.Required<ButtonHTMLAttributes<HTMLButtonElement>, "type">
+>(function SafeButton(props, ref) {
   // eslint-disable-next-line react/button-has-type
-  return <button {...props} />;
-}
+  return <button {...props} ref={ref} />;
+});
