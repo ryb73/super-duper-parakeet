@@ -11,3 +11,4 @@ export const six = forceEither(Int.decode(6));
 export const seven = forceEither(Int.decode(7));
 export const eight = forceEither(Int.decode(8));
 export const nine = forceEither(Int.decode(9));
+export const ten = forceEither(Int.decode(10));
