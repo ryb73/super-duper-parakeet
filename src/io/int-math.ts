@@ -2,7 +2,6 @@ import type { Int } from "io-ts";
 import { one, zero } from "./constants";
 
 export function addInt<T extends Int>(...ints: T[]): T {
-  // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
   return ints.reduce((a, b) => (a + b) as Int, zero) as T;
 }
 

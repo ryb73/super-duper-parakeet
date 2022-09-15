@@ -6,7 +6,7 @@ import type { ComponentProps, ComponentType } from "react";
 
 export function safeStyledElement<
   Tag extends keyof JSX.IntrinsicElements,
-  StyleProps,
+  StyleProps extends Record<string, any>,
 >(
   tag: Tag,
   typedefs: StyleProps,
@@ -23,7 +23,7 @@ export function safeStyledElement<
 
 export function safeStyledComponent<
   C extends ComponentType<ComponentProps<C>>,
-  StyleProps,
+  StyleProps extends Record<string, any>,
 >(
   Component: C,
   typedefs: StyleProps,
