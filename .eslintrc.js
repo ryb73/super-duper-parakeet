@@ -18,5 +18,8 @@ module.exports = {
     "etc/no-misused-generics": `off`,
 
     "no-console": [`warn`, { allow: [`warn`, `error`] }],
+
+    // Incompatible with old versions of Safari. Remove this in maybe a year?
+    "unicorn/prefer-string-replace-all": `off`,
   },
 };
