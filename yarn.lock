@@ -3599,6 +3599,7 @@ __metadata:
     jest: ^26.0.0 || ^27.0.0
     lodash: ^4.17.21
     monocle-ts: ^2.3.9
+    nanoid: ^4.0.0
     newtype-ts: ^0.3.4
     next: ">=9 <=12"
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -3630,6 +3631,8 @@ __metadata:
     lodash:
       optional: true
     monocle-ts:
+      optional: true
+    nanoid:
       optional: true
     newtype-ts:
       optional: true
