@@ -1,5 +1,5 @@
 import { string } from "io-ts";
-import { forceDecode } from "../../src/io/forceDecode";
+import { DecodeError, forceDecode } from "../../src/io/forceDecode";
 
 describe(`basic`, () => {
   const T = string;
@@ -20,6 +20,11 @@ describe(`basic`, () => {
     test(`custom message`, () => {
       const notS = 9;
       expect(() => forceDecode(T, notS, `Ooops`)).toThrow(`Ooops`);
+    });
+
+    test(`DecodeError`, () => {
+      const notS = 9;
+      expect(() => forceDecode(T, notS)).toThrow(DecodeError);
     });
   });
 });
