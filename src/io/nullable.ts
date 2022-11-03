@@ -1,6 +1,7 @@
-import type { Type } from "io-ts";
+import type { Mixed } from "io-ts";
 import { nullType, union } from "io-ts";
 
-export function nullable<A, O>(T: Type<A, O>) {
+// eslint-disable-next-line @typescript-eslint/no-redeclare
+export function nullable<T extends Mixed>(T: T) {
   return union([nullType, T]);
 }
