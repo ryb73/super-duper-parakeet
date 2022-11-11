@@ -162,12 +162,10 @@ export function renameKey<
       [
         renameKey(One as HasPropsC, oldKey, newKey),
         renameKey(Two as HasPropsC, oldKey, newKey),
-        /* eslint-disable @typescript-eslint/no-unnecessary-condition */
         Three && renameKey(Three as HasPropsC, oldKey, newKey),
         Four && renameKey(Four as HasPropsC, oldKey, newKey),
         Five && renameKey(Five as HasPropsC, oldKey, newKey),
       ].filter((v) => !!v) as any,
-      /* eslint-enable @typescript-eslint/no-unnecessary-condition */
     ) as unknown as RenameKeyType<T, Old, New>;
   }
 

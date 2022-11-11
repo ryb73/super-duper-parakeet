@@ -92,12 +92,10 @@ export function makePartial<
       [
         makePartial(One as HasPropsC),
         makePartial(Two as HasPropsC),
-        /* eslint-disable @typescript-eslint/no-unnecessary-condition */
         Three && makePartial(Three as HasPropsC),
         Four && makePartial(Four as HasPropsC),
         Five && makePartial(Five as HasPropsC),
       ].filter((v) => !!v) as any,
-      /* eslint-enable @typescript-eslint/no-unnecessary-condition */
     ) as unknown as MakePartial<T>;
   }
 
