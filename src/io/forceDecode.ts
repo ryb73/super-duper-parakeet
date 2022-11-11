@@ -1,4 +1,5 @@
 import { getOrElse, left } from "fp-ts/lib/Either";
+import type { invalid } from "invalid-type";
 import type { Decode, Errors, Type } from "io-ts";
 import reporter from "io-ts-reporters";
 
@@ -22,7 +23,7 @@ function forceDecode<A, O, I>(
   typeOrDecoder: Decode<I, A> | Type<A, O, I>,
   value: Promise<any>,
   message?: string,
-): never;
+): invalid<"Passed promise as value. Did you mean to await the value?">;
 
 function forceDecode<A, O, I>(
   typeOrDecoder: Decode<I, A> | Type<A, O, I>,

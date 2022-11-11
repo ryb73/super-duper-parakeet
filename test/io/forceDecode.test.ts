@@ -34,11 +34,9 @@ test(`no promises`, () => {
   const s = `hello`;
 
   function decode() {
-    const decoded = forceDecode(T, Promise.resolve(s));
-    /* eslint-disable @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call */
-    // @ts-expect-error - This is the real test. decoded should be type `never`, causing a TS error
-    return decoded.toLocaleUpperCase();
-    /* eslint-enable @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call */
+    // @ts-expect-error - This is the real test. decoded should be type `invalid`, causing a TS error
+    const decoded: string = forceDecode(T, Promise.resolve(s));
+    return decoded;
   }
   expect(decode).toThrow(``);
 });

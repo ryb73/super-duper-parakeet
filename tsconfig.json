@@ -14,8 +14,9 @@
     "outDir": "lib",
     "declaration": true,
     "jsx": "react",
-    //"noPropertyAccessFromIndexSignature": true,
-    //"noUncheckedIndexedAccess": true
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
 
   },
   "exclude": ["node_modules", "lib"],

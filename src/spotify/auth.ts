@@ -40,9 +40,9 @@ export function createAuthorizeUrl(
     response_type: responseType,
   };
 
-  if (state !== undefined) queryParams.state = state;
+  if (state !== undefined) queryParams[`state`] = state;
   if (forceShowDialog !== undefined)
-    queryParams.forceShowDialog = String(forceShowDialog);
+    queryParams[`forceShowDialog`] = String(forceShowDialog);
 
   const query = new URLSearchParams(queryParams).toString();
 

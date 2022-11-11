@@ -19,7 +19,7 @@ export function keyTranslator(keyMap: Record<string, string>, strict = true) {
           reverseKeyMap[key]
             ? {
                 ...acc,
-                [reverseKeyMap[key]]: value,
+                [reverseKeyMap[key]!]: value,
               }
             : strict
             ? acc
@@ -35,7 +35,7 @@ export function keyTranslator(keyMap: Record<string, string>, strict = true) {
           keyMap[key]
             ? {
                 ...acc,
-                [keyMap[key]]: value,
+                [keyMap[key]!]: value,
               }
             : strict
             ? acc

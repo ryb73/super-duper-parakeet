@@ -3563,6 +3563,7 @@ __metadata:
     fp-ts: ^2.10.4
     graphql: ^15.5.0
     immer: ^9.0.2
+    invalid-type: ^1.0.0
     io-ts: ^2.2.16
     io-ts-reporters: ^2.0.0
     io-ts-types: ^0.5.16
@@ -7979,6 +7980,13 @@ fsevents@^2.3.2:
     has: ^1.0.3
     side-channel: ^1.0.4
   checksum: 1944f92e981e47aebc98a88ff0db579fd90543d937806104d0b96557b10c1f170c51fb777b97740a8b6ddeec585fca8c39ae99fd08a8e058dfc8ab70937238bf
+  languageName: node
+  linkType: hard
+
+"invalid-type@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "invalid-type@npm:1.0.0"
+  checksum: ddcd089f01caef7e81a121fbca56db283a5542ac09c8a02c2b8456309b84d3fa029d94c92be8e525fe54d045953f59c2ca667269d005f24814a1e15c0231e46d
   languageName: node
   linkType: hard
 
