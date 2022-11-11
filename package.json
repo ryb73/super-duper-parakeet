@@ -73,7 +73,6 @@
     "fp-ts": "^2.10.4",
     "graphql": "^15.5.0",
     "immer": "^9.0.2",
-    "invalid-type": "^1.0.0",
     "io-ts": "^2.2.16",
     "io-ts-reporters": "^2.0.0",
     "io-ts-types": "^0.5.16",
@@ -173,5 +172,8 @@
     "react-query": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "invalid-type": "^1.0.0"
   }
 }
