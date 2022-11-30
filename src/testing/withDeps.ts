@@ -2,7 +2,7 @@ import { defined, isDefined } from "../type-checks";
 
 type ValueFn<T> = () => PromiseLike<T> | T;
 
-type TestRunnerFunctions = {
+export type TestRunnerFunctions = {
   afterAll: (cb: () => Promise<void>) => void;
   afterEach: (cb: () => Promise<void>) => void;
   beforeAll: (cb: () => Promise<void>) => void;
