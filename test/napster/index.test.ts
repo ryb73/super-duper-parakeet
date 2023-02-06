@@ -3,6 +3,7 @@ import { string } from "io-ts";
 import { forceDecode } from "../../src/io/forceDecode";
 import { getAccount, refreshAccessToken } from "../../src/napster";
 import type { Account, Config, UserId } from "../../src/napster/types";
+import { isDefined } from "../../src/type-checks";
 
 const {
   NAPSTER_API_KEY,
@@ -12,10 +13,10 @@ const {
 } = process.env;
 
 const isConfigured =
-  NAPSTER_API_KEY &&
-  NAPSTER_SECRET &&
-  NAPSTER_REDIRECT_URI &&
-  NAPSTER_REFRESH_TOKEN;
+  isDefined(NAPSTER_API_KEY) &&
+  isDefined(NAPSTER_SECRET) &&
+  isDefined(NAPSTER_REDIRECT_URI) &&
+  isDefined(NAPSTER_REFRESH_TOKEN);
 
 const describeFn = isConfigured ? describe : describe.skip;
 

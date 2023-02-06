@@ -19,6 +19,7 @@ import {
   type,
   union,
 } from "io-ts";
+import { isDefined } from "../type-checks";
 import type { RenameKey } from "../types/RenameKey";
 import type {
   ClassOfHasProps,
@@ -76,7 +77,7 @@ function renameKeyType<
   New extends string,
 >(T: T, oldKey: Old, newKey: New): RenameKeyType<T, Old, New> {
   const { [oldKey]: discard, ...rest } = T.props;
-  if (!discard) return T as unknown as RenameKeyType<T, Old, New>;
+  if (!isDefined(discard)) return T as unknown as RenameKeyType<T, Old, New>;
 
   return type({ ...rest, [newKey]: discard }) as RenameKeyType<T, Old, New>;
 }
@@ -88,7 +89,7 @@ function renameKeyPartial<
   New extends string,
 >(T: T, oldKey: Old, newKey: New): RenameKeyType<T, Old, New> {
   const { [oldKey]: discard, ...rest } = T.props;
-  if (!discard) return T as unknown as RenameKeyType<T, Old, New>;
+  if (!isDefined(discard)) return T as unknown as RenameKeyType<T, Old, New>;
 
   return partial({ ...rest, [newKey]: discard }) as RenameKeyType<T, Old, New>;
 }
@@ -162,10 +163,16 @@ export function renameKey<
       [
         renameKey(One as HasPropsC, oldKey, newKey),
         renameKey(Two as HasPropsC, oldKey, newKey),
-        Three && renameKey(Three as HasPropsC, oldKey, newKey),
-        Four && renameKey(Four as HasPropsC, oldKey, newKey),
-        Five && renameKey(Five as HasPropsC, oldKey, newKey),
-      ].filter((v) => !!v) as any,
+        isDefined(Three)
+          ? renameKey(Three as HasPropsC, oldKey, newKey)
+          : undefined,
+        isDefined(Four)
+          ? renameKey(Four as HasPropsC, oldKey, newKey)
+          : undefined,
+        isDefined(Five)
+          ? renameKey(Five as HasPropsC, oldKey, newKey)
+          : undefined,
+      ].filter((v) => isDefined(v)) as any,
     ) as unknown as RenameKeyType<T, Old, New>;
   }
 

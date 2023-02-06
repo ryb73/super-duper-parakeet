@@ -39,8 +39,9 @@ describe(`isNull`, () => {
 
     const res = n(maybe);
 
-    // Ensure eslint error is raised here
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    // Ensure eslint error is raised here. It should be inferred that if res is true, maybe is null, and thus
+    // @typescript-eslint/no-unnecessary-condition should notice that the "&& maybe" is redundant.
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions
     if (res && maybe) {
       throw new Error(`n/a`);
     }
@@ -60,7 +61,7 @@ describe(`isDefined`, () => {
     const res = isDefined(maybe);
 
     // Ensure eslint error is raised here
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions
     if (!res && maybe) {
       throw new Error(`n/a`);
     }

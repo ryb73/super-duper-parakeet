@@ -15,7 +15,10 @@ type SampleQueryOptions = {
   queryOptions?: UseQueryOptions<unknown, unknown, unknown, `WhenSuccessful`>;
 };
 
-function renderSampleQuery({ error, queryOptions }: SampleQueryOptions = {}) {
+function renderSampleQuery({
+  error = false,
+  queryOptions,
+}: SampleQueryOptions = {}) {
   return renderHook(
     () =>
       useQuery(

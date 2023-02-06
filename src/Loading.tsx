@@ -4,11 +4,11 @@ export type Options = {
   retryCount?: number;
 };
 
-function Loading({ retryCount }: Options = {}) {
+function Loading({ retryCount = 0 }: Options = {}) {
   return (
     <div>
       Loading...
-      {!!retryCount && ` (retry ${retryCount})`}
+      {retryCount > 0 && ` (retry ${retryCount})`}
     </div>
   );
 }

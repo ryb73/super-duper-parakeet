@@ -3469,15 +3469,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ryb73/eslint-config@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "@ryb73/eslint-config@npm:7.0.2"
+"@ryb73/eslint-config@npm:^7.1.6":
+  version: 7.1.6
+  resolution: "@ryb73/eslint-config@npm:7.1.6"
   peerDependencies:
     "@emotion/eslint-plugin": ^11.2.0
     "@shopify/eslint-plugin": ^42.0.1
     "@typescript-eslint/eslint-plugin": ^5.36.2
     "@typescript-eslint/parser": ^5.36.2
-    eslint-config-hardcore: ^25.0.0
+    eslint-config-hardcore: 25.0.0
     eslint-config-prettier: ^8.5.0
     eslint-import-resolver-node: ^0.3.4
     eslint-plugin-array-func: ^3.1.7
@@ -3504,7 +3504,7 @@ __metadata:
     prettier: ^2.7.1
     putout: ^24.6.0
     typescript: ^4.8.3
-  checksum: cfd03d07420bd51b297d3579d1b67aa5bcb8498a3d7eee15212afe527f8763e4aed7f909dc59f30b32d022fe554207c9c367e0f6723e7fbb6bfb296e8eb4e911
+  checksum: c329844a97111023377e58e927fc290cba9f081ae4355a2d3d91e995f6c5b3ff0e618e9b35cd0809220a4464d129c094c5bcea225f53aaa7b0d57ef549847254
   languageName: node
   linkType: hard
 
@@ -3519,7 +3519,7 @@ __metadata:
     "@emotion/styled": ^11.3.0
     "@jest/types": ^27.0.2
     "@radix-ui/react-collapsible": ^0.1.6
-    "@ryb73/eslint-config": ^7.0.2
+    "@ryb73/eslint-config": ^7.1.6
     "@shopify/eslint-plugin": ^42.0.1
     "@testing-library/jest-dom": ^5.12.0
     "@testing-library/react": ^13.0.0

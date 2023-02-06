@@ -1,12 +1,13 @@
 import path from "path";
 import type { Config } from "@jest/types";
 import dotenv from "dotenv";
+import { isDefined } from "./src/type-checks";
 
 function loadEnv() {
   const local = dotenv.config({
     path: path.resolve(process.cwd(), `.env.test.local`),
   });
-  if (!local.error) return;
+  if (!isDefined(local.error)) return;
   dotenv.config({ path: path.resolve(process.cwd(), `.env.test`) });
 }
 loadEnv();

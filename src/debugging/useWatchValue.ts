@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import throttle from "lodash/throttle";
 import { useEffect, useMemo, useState } from "react";
+import { isDefined } from "../type-checks";
 import { useGetter } from "../useGetter";
 
 export type Options = {
@@ -8,10 +9,10 @@ export type Options = {
   throttle?: boolean | number;
 };
 
-function useLog({ log, throttle: shouldThrottle }: Options = {}) {
+function useLog({ log, throttle: shouldThrottle = false }: Options = {}) {
   const effectiveLog = useMemo(() => {
     const fn = log ?? console.debug.bind(console);
-    if (!shouldThrottle) return fn;
+    if (shouldThrottle === false) return fn;
 
     return throttle(fn, shouldThrottle === true ? 1000 / 60 : shouldThrottle);
   }, [log, shouldThrottle]);
@@ -42,13 +43,13 @@ export function useWatchValues(
 
   useEffect(() => {
     const changedEntries = Object.entries(memoedVs).filter(
-      ([vName, v]) => !previousValues || v !== previousValues[vName],
+      ([vName, v]) => !isDefined(previousValues) || v !== previousValues[vName],
     );
 
     if (changedEntries.length === 0) return;
 
     getLog()(
-      `${previousValues ? `updated` : `initial watch`} ${name}:`,
+      `${isDefined(previousValues) ? `updated` : `initial watch`} ${name}:`,
       Object.fromEntries(changedEntries),
     );
 

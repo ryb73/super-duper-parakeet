@@ -31,7 +31,7 @@ export function decodeInput<A, O, Req>(
       const decoded = T.decode(getInput(req));
 
       if (isLeft(decoded)) {
-        if (onError) onError(decoded.left);
+        onError?.(decoded.left);
 
         res.status(400);
         res.end();

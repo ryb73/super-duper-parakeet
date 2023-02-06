@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { isDefined } from "./type-checks";
 
 type CanceledRef = {
   readonly current: boolean;
@@ -13,7 +14,7 @@ export function useAsyncEffect(
     let destructor: (() => void) | void;
 
     void effect(canceled).then((result) => {
-      if (canceled.current && result) {
+      if (canceled.current && isDefined(result)) {
         console.warn(
           `[warning] useAsyncEffect: destructor ignored after effect is canceled`,
         );
@@ -25,7 +26,7 @@ export function useAsyncEffect(
 
     return () => {
       canceled.current = true;
-      if (destructor) destructor();
+      if (isDefined(destructor)) destructor();
     };
   }, [effect]);
 }

@@ -22,7 +22,7 @@ function method(
     try {
       await handler(req, res);
     } catch (error: unknown) {
-      if (onError) onError(error);
+      onError?.(error);
 
       res.status(500);
       res.end();

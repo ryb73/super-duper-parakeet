@@ -17,6 +17,7 @@ import {
   partial,
   union,
 } from "io-ts";
+import { isDefined } from "../type-checks";
 import type {
   ClassOfHasProps,
   ClassesOfHasProps,
@@ -92,10 +93,10 @@ export function makePartial<
       [
         makePartial(One as HasPropsC),
         makePartial(Two as HasPropsC),
-        Three && makePartial(Three as HasPropsC),
-        Four && makePartial(Four as HasPropsC),
-        Five && makePartial(Five as HasPropsC),
-      ].filter((v) => !!v) as any,
+        isDefined(Three) ? makePartial(Three as HasPropsC) : undefined,
+        isDefined(Four) ? makePartial(Four as HasPropsC) : undefined,
+        isDefined(Five) ? makePartial(Five as HasPropsC) : undefined,
+      ].filter((v) => isDefined(v)) as any,
     ) as unknown as MakePartial<T>;
   }
 
