@@ -25,8 +25,8 @@ describe(`decode`, () => {
       ]);
     });
   });
+});
 
-  test(`encode`, () => {
-    expect(NullFromString.encode(null)).toBe(`null`);
-  });
+test(`encode`, () => {
+  expect(NullFromString.encode(null)).toBe(`null`);
 });
