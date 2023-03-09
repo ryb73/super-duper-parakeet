@@ -3596,7 +3596,7 @@ __metadata:
   peerDependencies:
     "@emotion/react": "*"
     "@emotion/styled": ^11.3.0
-    "@radix-ui/react-collapsible": ^0.1.6
+    "@radix-ui/react-collapsible": ^0.1.6 || ^1.0.2
     axios: ^0.26.1
     dayjs: "*"
     fp-ts: ^2.10.4
