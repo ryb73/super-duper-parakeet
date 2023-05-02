@@ -40,13 +40,13 @@ test(`existing data`, async () => {
   const existingData = { derple: `tv` };
 
   const handler = jest.fn(
-    /* eslint-disable @typescript-eslint/no-unused-vars */
+    /* eslint-disable unused-imports/no-unused-vars */
     (
       rq: string,
       rs: MinimalResponse & { another: () => void },
       args: { derple: string; input: string },
     ) => {},
-    /* eslint-enable @typescript-eslint/no-unused-vars */
+    /* eslint-enable unused-imports/no-unused-vars */
   );
 
   const resultantHandler = decodeInput(string, (r: string) => r.repeat(2))(
@@ -77,13 +77,13 @@ test(`existing input key`, async () => {
   const existingData = { derple: `tv`, input: 42 };
 
   const handler = jest.fn(
-    /* eslint-disable @typescript-eslint/no-unused-vars */
+    /* eslint-disable unused-imports/no-unused-vars */
     (
       rq: string,
       rs: MinimalResponse,
       args: { derple: string; input: string },
     ) => {},
-    /* eslint-enable @typescript-eslint/no-unused-vars */
+    /* eslint-enable unused-imports/no-unused-vars */
   );
 
   const resultantHandler = decodeInput(string, (r: string) => r.repeat(2))(
