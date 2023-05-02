@@ -1,8 +1,8 @@
+import styled from "@emotion/styled";
 import React, { useCallback, useEffect } from "react";
 import type { HTMLAttributes, PropsWithChildren } from "react";
 import { isDefined } from "../type-checks";
 import { useRandomClassName } from "./randomClassName";
-import { sst } from "./simple-styled";
 
 type Props = PropsWithChildren<
   Omit<HTMLAttributes<HTMLSpanElement>, "onClick"> & {
@@ -11,7 +11,7 @@ type Props = PropsWithChildren<
   }
 >;
 
-const StyledSpan = sst(`span`)({
+const StyledSpan = styled.span({
   cursor: `default`,
 });
 
