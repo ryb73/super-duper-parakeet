@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import { sst } from "./simple-styled";
 
-export const BareList = styled.ul({
+export const BareList = sst(`ul`)({
   listStyleType: `none`,
   margin: 0,
   padding: 0,

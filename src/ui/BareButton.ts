@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
 import { SafeButton } from "./SafeButton";
+import { ssc } from "./simple-styled";
 
-export const BareButton = styled(SafeButton)({
+export const BareButton = ssc(SafeButton)({
   background: `none`,
   border: 0,
   color: `inherit`,
