@@ -15,7 +15,7 @@ export function sst<Tag extends keyof JSX.IntrinsicElements>(Tag: Tag) {
     });
 }
 
-export function ssc<P extends { style?: CSSProperties }>(
+export function ssc<P extends { style?: CSSProperties | undefined }>(
   Component: ComponentType<P>,
 ) {
   return (baseStyle: CSSProperties) =>
