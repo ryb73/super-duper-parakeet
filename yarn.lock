@@ -3706,6 +3706,7 @@ __metadata:
     ts-node: ^10.1.0
     ts-toolbelt: ^9.6.0
     typescript: 5.0.4
+    typestyle: ^2.4.0
     vue-eslint-parser: ^9.1.1
   peerDependencies:
     "@emotion/react": "*"
@@ -3727,6 +3728,7 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-query: ^3.13.12
+    typestyle: ^2.4.0
   peerDependenciesMeta:
     "@emotion/react":
       optional: true
@@ -3765,6 +3767,8 @@ __metadata:
     react-dom:
       optional: true
     react-query:
+      optional: true
+    typestyle:
       optional: true
   languageName: unknown
   linkType: soft
@@ -5913,6 +5917,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"csstype@npm:3.0.10":
+  version: 3.0.10
+  resolution: "csstype@npm:3.0.10"
+  checksum: 20a8fa324f2b33ddf94aa7507d1b6ab3daa6f3cc308888dc50126585d7952f2471de69b2dbe0635d1fdc31223fef8e070842691877e725caf456e2378685a631
+  languageName: node
+  linkType: hard
+
 "csstype@npm:^3.0.2":
   version: 3.0.11
   resolution: "csstype@npm:3.0.11"
@@ -7745,6 +7756,13 @@ __metadata:
   version: 2.11.9
   resolution: "fp-ts@npm:2.11.9"
   checksum: bcab4b9d97f9b77fa7283d5834fd847e58955067d5560eb0a9316900d6c92e959d8109038caf78ffb8ba93015ba8044a7a922c5acae8ca2fda4067f7e4e24bab
+  languageName: node
+  linkType: hard
+
+"free-style@npm:3.1.0":
+  version: 3.1.0
+  resolution: "free-style@npm:3.1.0"
+  checksum: 949258ae315deda48cac93ecd5f9a80f36e8a027e19ce2103598dc8d5ab60e963bbad5444b2a4990ddb746798dd188896f430285cf484afbf2141f7d75a191d8
   languageName: node
   linkType: hard
 
@@ -13494,6 +13512,16 @@ fsevents@^2.3.2:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: bb309d320c59a26565fb3793dba550576ab861018ff3fd1b7fccabbe46ae4a35546bc45f342c0a0b6f265c801ccdf64ffd68f548f117ceb7f0eac4b805cd52a9
+  languageName: node
+  linkType: hard
+
+"typestyle@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "typestyle@npm:2.4.0"
+  dependencies:
+    csstype: 3.0.10
+    free-style: 3.1.0
+  checksum: 8b4f02c24f67b594f98507b15a753dabd4db5eb0af007e1d310527c64030e11e9464b25b5a6bc65fb5eec9a4459a8336050121ecc29063ac87b8b47a6d698893
   languageName: node
   linkType: hard
 

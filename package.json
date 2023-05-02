@@ -93,6 +93,7 @@
     "ts-node": "^10.1.0",
     "ts-toolbelt": "^9.6.0",
     "typescript": "5.0.4",
+    "typestyle": "^2.4.0",
     "vue-eslint-parser": "^9.1.1"
   },
   "peerDependencies": {
@@ -114,7 +115,8 @@
     "next": ">=9 <=13",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-query": "^3.13.12"
+    "react-query": "^3.13.12",
+    "typestyle": "^2.4.0"
   },
   "peerDependenciesMeta": {
     "@emotion/react": {
@@ -172,6 +174,9 @@
       "optional": true
     },
     "react-query": {
+      "optional": true
+    },
+    "typestyle": {
       "optional": true
     }
   },
