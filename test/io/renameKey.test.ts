@@ -139,6 +139,7 @@ describe(`renameKey`, () => {
       });
 
       test(`encode`, () => {
+        // eslint-disable-next-line total-functions/no-unsafe-readonly-mutable-assignment
         const actual = T.encode(value);
         expect(actual).toStrictEqual(value);
       });

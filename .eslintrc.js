@@ -15,10 +15,6 @@ module.exports = {
   rules: {
     "@typescript-eslint/lines-between-class-members": `off`,
 
-    // This plugin is throwing an error
-    "etc/no-internal": `off`,
-    "etc/no-misused-generics": `off`,
-
     "no-console": [`warn`, { allow: [`warn`, `error`] }],
 
     // Incompatible with old versions of Safari. Remove this in maybe a year?
