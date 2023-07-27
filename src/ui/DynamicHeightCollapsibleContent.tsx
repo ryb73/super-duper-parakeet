@@ -44,7 +44,7 @@ const StyledCollapsibleContent = makeStyledCollapsible<
 );
 
 type Props = {
-  isOpen: boolean;
+  readonly isOpen: boolean;
 };
 
 /** Mount Collapsible.Content to the page so that it gets dynamically sized before hiding. */

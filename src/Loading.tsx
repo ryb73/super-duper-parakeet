@@ -1,7 +1,7 @@
 import React from "react";
 
 export type Options = {
-  retryCount?: number;
+  readonly retryCount?: number;
 };
 
 function Loading({ retryCount = 0 }: Options = {}) {

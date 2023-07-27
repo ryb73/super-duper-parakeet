@@ -9,14 +9,14 @@ import { isDefined } from "../type-checks";
 import { isQueryResolved } from "./isQueryResolved";
 
 type SingularProps<Data> = {
-  children: (result: QueryObserverSuccessResult<Data>) => ReactNode;
-  LoadingIndicator?: Loading;
-  result: QueryObserverResult<Data>;
+  readonly children: (result: QueryObserverSuccessResult<Data>) => ReactNode;
+  readonly LoadingIndicator?: Loading;
+  readonly result: QueryObserverResult<Data>;
 };
 
 type PairProps<D1, D2> = {
-  result: [QueryObserverResult<D1>, QueryObserverResult<D2>];
-  children: (
+  readonly result: [QueryObserverResult<D1>, QueryObserverResult<D2>];
+  readonly children: (
     result: [QueryObserverSuccessResult<D1>, QueryObserverSuccessResult<D2>],
   ) => ReactNode;
 };

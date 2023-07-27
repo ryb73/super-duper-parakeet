@@ -6,8 +6,8 @@ import { useRandomClassName } from "./randomClassName";
 
 type Props = PropsWithChildren<
   Omit<HTMLAttributes<HTMLSpanElement>, "onClick"> & {
-    htmlFor: string;
-    setAriaLabel?: boolean;
+    readonly htmlFor: string;
+    readonly setAriaLabel?: boolean;
   }
 >;
 

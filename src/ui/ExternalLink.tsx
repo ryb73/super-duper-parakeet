@@ -9,7 +9,7 @@ export function ExternalLink({
   "rel" | "target"
 >) {
   return (
-    <a {...props} target="_blank" rel="noopener noreferrer">
+    <a {...props} rel="noopener noreferrer" target="_blank">
       {children}
     </a>
   );
