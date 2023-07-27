@@ -13,8 +13,6 @@ module.exports = {
   ],
 
   rules: {
-    "@typescript-eslint/lines-between-class-members": `off`,
-
     "no-console": [`warn`, { allow: [`warn`, `error`] }],
 
     // Incompatible with old versions of Safari. Remove this in maybe a year?

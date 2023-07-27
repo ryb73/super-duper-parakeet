@@ -9,7 +9,6 @@ const baseClassName = style(bareButtonStyles);
 export const BareButton = forwardRef<
   ElementRef<typeof SafeButton>,
   ComponentPropsWithoutRef<typeof SafeButton>
-  // eslint-disable-next-line total-functions/no-unsafe-readonly-mutable-assignment
 >(function BareButton({ className, ...props }, ref) {
   return (
     <SafeButton
