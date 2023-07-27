@@ -3727,7 +3727,7 @@ __metadata:
     eslint-plugin-unicorn: ^47.0.0
     fp-ts: ^2.10.4
     graphql: ^15.5.0
-    immer: ^9.0.2
+    immer: ^10.0.2
     invalid-type: ^1.0.0
     io-ts: ^2.2.16
     io-ts-reporters: ^2.0.0
@@ -3758,7 +3758,6 @@ __metadata:
     axios: ^0.26.1
     dayjs: "*"
     fp-ts: ^2.10.4
-    immer: ^9.0.2
     io-ts: ^2.2.16
     io-ts-reporters: ^2.0.0
     io-ts-types: ^0.5.16
@@ -3784,8 +3783,6 @@ __metadata:
     dayjs:
       optional: true
     fp-ts:
-      optional: true
-    immer:
       optional: true
     io-ts:
       optional: true
@@ -8363,10 +8360,10 @@ fsevents@^2.3.2:
   languageName: node
   linkType: hard
 
-"immer@npm:^9.0.2":
-  version: 9.0.12
-  resolution: "immer@npm:9.0.12"
-  checksum: bcbec6d76dac65e49068eb67ece4d407116e62b8cde3126aa89c801e408f5047763ba0aeb62f1938c1aa704bb6612f1d8302bb2a86fa1fc60fcc12d8b25dc895
+"immer@npm:^10.0.2":
+  version: 10.0.2
+  resolution: "immer@npm:10.0.2"
+  checksum: 525a3b14210d02ae420c3b9f6ca14f7e9bcf625611d1356e773e7739f14c7c8de50dac442e6c7de3a6e24a782f7b792b6b8666bc0b3f00269d21a95f8f68ca84
   languageName: node
   linkType: hard
 
