@@ -25,6 +25,6 @@ export function floor(n: number): Int {
   return Math.floor(n) as Int;
 }
 
-export function lengthInt(a: unknown[]): Int {
+export function lengthInt(a: readonly unknown[]): Int {
   return a.length as Int;
 }
