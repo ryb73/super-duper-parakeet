@@ -25,7 +25,8 @@
     "test": "yarn test-nc --coverage"
   },
   "files": [
-    "lib/src/"
+    "lib/src/",
+    "sass/"
   ],
   "devDependencies": {
     "@babel/core": "^7.19.1",
