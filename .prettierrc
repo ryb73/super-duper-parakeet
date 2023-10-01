@@ -1,3 +1,12 @@
 {
-  "trailingComma": "all"
+  "plugins": ["prettier-plugin-css-order"],
+  "overrides": [
+    {
+      "files": ["tsconfig.json"],
+      "options": {
+        "parser": "json5",
+        "quoteProps": "preserve"
+      }
+    }
+  ]
 }

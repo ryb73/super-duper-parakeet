@@ -12,3 +12,9 @@ lib/
 coverage/
 
 *.local
+
+# CSS build files
+css/
+
+# Stylelint
+.stylelintcache

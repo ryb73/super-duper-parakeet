@@ -5,7 +5,14 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": ["es2019", "es2020.bigint", "es2020.string", "es2020.symbol.wellknown", "dom", "dom.iterable"],
+    "lib": [
+      "es2019",
+      "es2020.bigint",
+      "es2020.string",
+      "es2020.symbol.wellknown",
+      "dom",
+      "dom.iterable",
+    ],
     "module": "commonjs",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -19,9 +26,5 @@
     "target": "es2019",
   },
   "exclude": ["node_modules", "lib"],
-  "include": [
-    ".*",
-    "*",
-    "**/*",
-  ]
+  "include": [".*", "*", "**/*"],
 }
