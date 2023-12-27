@@ -194,7 +194,7 @@
     "immer": "^10.0.2",
     "invalid-type": "^1.0.0"
   },
-  "packageManager": "yarn@3.5.0",
+  "packageManager": "yarn@4.0.2",
   "resolutions": {
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
