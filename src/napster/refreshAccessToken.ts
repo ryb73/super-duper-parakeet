@@ -8,7 +8,6 @@ const ExternalTokens = strict({
   expires_in: Int,
   refresh_token: string,
 });
-// eslint-disable-next-line @typescript-eslint/no-redeclare
 type ExternalTokens = TypeOf<typeof ExternalTokens>;
 
 export async function refreshAccessToken(

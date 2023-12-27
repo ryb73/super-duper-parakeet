@@ -23,7 +23,6 @@ export type UserIdBrand = {
 };
 
 const UserId = brandedNonEmptyString<UserIdBrand>(`NapsterUserId`);
-// eslint-disable-next-line @typescript-eslint/no-redeclare
 type UserId = TypeOf<typeof UserId>;
 export { UserId };
 
@@ -107,6 +106,5 @@ const Account = strict({
     ),
   ]),
 });
-// eslint-disable-next-line @typescript-eslint/no-redeclare
 type Account = TypeOf<typeof Account>;
 export { Account };

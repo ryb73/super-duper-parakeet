@@ -71,7 +71,6 @@ export type RenameKeyType<
   : never;
 
 function renameKeyType<
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
   T extends TypeC<any>,
   Old extends string,
   New extends string,
@@ -83,7 +82,6 @@ function renameKeyType<
 }
 
 function renameKeyPartial<
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
   T extends PartialC<any>,
   Old extends string,
   New extends string,
@@ -95,7 +93,6 @@ function renameKeyPartial<
 }
 
 function renameKeyLeafType<
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
   T extends PartialC<any> | TypeC<any>,
   Old extends string,
   New extends string,
@@ -112,7 +109,6 @@ function renameKeyLeafType<
 }
 
 function renameKeyExactType<
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
   T extends ExactC<TypeC<any>>,
   Old extends string,
   New extends string,
@@ -128,7 +124,6 @@ export function renameKey<
   /* eslint-disable @typescript-eslint/no-use-before-define */
   Old extends string,
   New extends string,
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
   T extends HasPropsC<P, C, CS>,
   P extends Props = PropsOfHasProps<T>,
   C extends PartialC<P> | TypeC<P> = ClassOfHasProps<T>,

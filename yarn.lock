@@ -3660,15 +3660,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ryb73/eslint-config@npm:^13.0.0":
-  version: 13.0.0
-  resolution: "@ryb73/eslint-config@npm:13.0.0"
+"@ryb73/eslint-config@npm:^13.0.1":
+  version: 13.0.1
+  resolution: "@ryb73/eslint-config@npm:13.0.1"
   peerDependencies:
     "@emotion/eslint-plugin": ^11.2.0
     eslint: ^8.50.0
     eslint-config-hardcore: ^45.1.1
     typescript: ">=4.9.6"
-  checksum: 90ad3e6c3080186e10b6751a493abb95ff3f381d5117c63f31194ff5a837583fe4ee5755fe4507e1e04ac769b6a18ca61fb472176364302b6a9d32e07f4a7c66
+  checksum: d7131c65d2cd2b8f3df8acab786b3c6dbd8f0a84a6dd0a5c02b96615fc534cfdecb8bcee2b3aa02bc1a5a0229a978b5b0c6bbe0b28391509ff1824837213912d
   languageName: node
   linkType: hard
 
@@ -3683,7 +3683,7 @@ __metadata:
     "@emotion/styled": "npm:^11.3.0"
     "@jest/types": "npm:^29.5.0"
     "@radix-ui/react-collapsible": "npm:^1.0.2"
-    "@ryb73/eslint-config": "npm:^13.0.0"
+    "@ryb73/eslint-config": "npm:^13.0.1"
     "@testing-library/dom": "npm:^9.3.0"
     "@testing-library/jest-dom": "npm:^5.12.0"
     "@testing-library/react": "npm:^13.0.0"

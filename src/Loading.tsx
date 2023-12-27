@@ -13,7 +13,6 @@ function Loading({ retryCount = 0 }: Options = {}) {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
 type Loading = typeof Loading;
 
 export { Loading };

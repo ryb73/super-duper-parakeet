@@ -53,7 +53,6 @@ export type MakePartial<T extends HasPropsC> = T extends TypeC<any>
 
 export function makePartial<
   /* eslint-disable @typescript-eslint/no-use-before-define */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
   T extends HasPropsC<P, C, CS>,
   P extends Props = PropsOfHasProps<T>,
   C extends PartialC<P> | TypeC<P> = ClassOfHasProps<T>,

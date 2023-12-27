@@ -1,3 +1,4 @@
+/* eslint-disable import/no-deprecated */
 import { filterUndefined } from "../../src/collections/filterUndefined";
 
 test(`filterUndefined`, () => {
