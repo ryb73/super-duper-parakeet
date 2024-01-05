@@ -28,3 +28,11 @@ export function floor(n: number): Int {
 export function lengthInt(a: readonly unknown[]): Int {
   return a.length as Int;
 }
+
+export function parseIntStrong(s: string, radix = 10) {
+  const n = Number.parseInt(s, radix);
+  if (Number.isNaN(n)) {
+    return null;
+  }
+  return n as Int;
+}

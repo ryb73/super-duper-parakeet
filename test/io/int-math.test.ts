@@ -7,6 +7,7 @@ import {
   maxInt,
   minInt,
   multiplyInt,
+  parseIntStrong,
   subtractInt,
 } from "../../src/io/int-math";
 
@@ -36,4 +37,18 @@ test(`floor`, () => {
 
 test(`length`, () => {
   expect(lengthInt([3, 4234, 231, 2, 12_312, 3, 121, 2])).toBe(8);
+});
+
+describe(`parseIntStrong`, () => {
+  test(`int`, () => {
+    expect(parseIntStrong(`101`)).toBe(101);
+  });
+
+  test(`decimal`, () => {
+    expect(parseIntStrong(`313.232`)).toBe(313);
+  });
+
+  test(`string`, () => {
+    expect(parseIntStrong(`string`)).toBeNull();
+  });
 });
