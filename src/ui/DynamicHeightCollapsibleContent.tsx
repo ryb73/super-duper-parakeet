@@ -35,8 +35,8 @@ const StyledCollapsibleContent = makeStyledCollapsible<
   // "!important" is unfortunately required because (afaict) radix is using their own logic to set
   // or unset the animation props. It kind of seems like they're trying to accomplish the same thing
   // I'm doing here, except it's not working?
-  ({ hasBeenOpen }) =>
-    !hasBeenOpen
+  ({ forceMount, hasBeenOpen }) =>
+    forceMount && !hasBeenOpen
       ? {
           animationDuration: `0s !important`,
         }
