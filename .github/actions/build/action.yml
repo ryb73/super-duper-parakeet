@@ -3,7 +3,7 @@ description: "Installs and builds"
 runs:
   using: "composite"
   steps:
-    - run: yarn --immutable
+    - run: pnpm ci
       shell: bash
-    - run: yarn build
+    - run: pnpm build
       shell: bash

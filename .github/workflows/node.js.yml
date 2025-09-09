@@ -22,14 +22,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "yarn"
+          cache: "pnpm"
       - uses: ./.github/actions/build
-      - run: yarn lint-strict
-      - run: yarn test
+      - run: pnpm lint-strict
+      - run: pnpm test
 
   publish-npm:
     needs: test
@@ -37,6 +38,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v5
         with:
           node-version: 24

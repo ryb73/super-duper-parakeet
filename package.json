@@ -12,17 +12,17 @@
   "scripts": {
     "all-prettier": "prettier --write .",
     "build-css": "sass sass:css",
-    "css": "yarn build-css --watch",
+    "css": "pnpm build-css --watch",
     "clean": "rm -rf lib/ css/",
     "build": "tsc --pretty",
     "watch": "tsc --pretty -w",
     "lint-js": "eslint . --ext ts,tsx,js",
     "lint-css": "stylelint \"sass/**/*.{css,scss}\" --cache",
-    "lint-strict-js": "yarn lint-js --max-warnings 0",
-    "lint-strict": "yarn lint-strict-js && yarn lint-css",
-    "lint": "yarn lint-js && yarn lint-css",
+    "lint-strict-js": "pnpm lint-js --max-warnings 0",
+    "lint-strict": "pnpm lint-strict-js && pnpm lint-css",
+    "lint": "pnpm lint-js && pnpm lint-css",
     "test-nc": "jest",
-    "test": "yarn test-nc --coverage"
+    "test": "pnpm test-nc --coverage"
   },
   "files": [
     "lib/src/",
@@ -166,13 +166,15 @@
     "immer": "^10.0.2",
     "invalid-type": "^1.0.0"
   },
-  "packageManager": "yarn@4.0.2",
-  "resolutions": {
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "@typescript-eslint/utils": "^6.14.0",
-    "eslint-plugin-jest": "^27.2.3",
-    "eslint-plugin-react": "^7.33.2",
-    "typescript": "5.0.4"
-  }
+  "pnpm": {
+    "overrides": {
+      "@typescript-eslint/eslint-plugin": "^6.14.0",
+      "@typescript-eslint/parser": "^6.14.0",
+      "@typescript-eslint/utils": "^6.14.0",
+      "eslint-plugin-jest": "^27.2.3",
+      "eslint-plugin-react": "^7.33.2",
+      "typescript": "5.0.4"
+    }
+  },
+  "packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67"
 }
