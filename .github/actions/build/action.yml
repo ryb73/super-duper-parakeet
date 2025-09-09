@@ -3,6 +3,7 @@ description: "Installs and builds"
 runs:
   using: "composite"
   steps:
+    - uses: pnpm/action-setup@v4
     - run: pnpm ci
       shell: bash
     - run: pnpm build
