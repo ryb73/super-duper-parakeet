@@ -1,8 +1,8 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import { useCallback, useRef, useState } from "react";
-import { delay } from "../src/fp/delay";
-import { useAsyncEffect } from "../src/useAsyncEffect";
-import { wait } from "../src/wait";
+import { delay } from "../src/fp/delay.js";
+import { useAsyncEffect } from "../src/useAsyncEffect.js";
+import { wait } from "../src/wait.js";
 
 describe(`without early cancel`, () => {
   test(`no destructor`, async () => {

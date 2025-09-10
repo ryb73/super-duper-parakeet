@@ -2,7 +2,7 @@ import { getOrElse, left } from "fp-ts/lib/Either";
 import type { invalid } from "invalid-type";
 import type { Decode, Errors, Type } from "io-ts";
 import reporter from "io-ts-reporters";
-import { isDefined } from "../type-checks";
+import { isDefined } from "../type-checks.js";
 
 export class DecodeError extends Error {
   public value: unknown;

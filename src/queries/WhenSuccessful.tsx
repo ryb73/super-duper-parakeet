@@ -4,9 +4,9 @@ import type {
   QueryObserverResult,
   QueryObserverSuccessResult,
 } from "react-query";
-import { Loading } from "../Loading";
-import { isDefined } from "../type-checks";
-import { isQueryResolved } from "./isQueryResolved";
+import { Loading } from "../Loading.js";
+import { isDefined } from "../type-checks.js";
+import { isQueryResolved } from "./isQueryResolved.js";
 
 type SingularProps<Data> = {
   readonly children: (result: QueryObserverSuccessResult<Data>) => ReactNode;

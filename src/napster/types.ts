@@ -12,9 +12,9 @@ import {
   union,
 } from "io-ts";
 import { BooleanFromString } from "io-ts-types";
-import { brandedNonEmptyString } from "../io/brandedString";
-import { DayUtc } from "../io/DayUtc";
-import { nullable } from "../io/nullable";
+import { brandedNonEmptyString } from "../io/brandedString.js";
+import { DayUtc } from "../io/DayUtc.js";
+import { nullable } from "../io/nullable.js";
 
 export type Config = { apiKey: string; accessToken: string };
 

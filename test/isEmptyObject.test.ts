@@ -1,4 +1,4 @@
-import { isEmptyObject } from "../src/isEmptyObject";
+import { isEmptyObject } from "../src/isEmptyObject.js";
 
 test(`true`, () => {
   expect(isEmptyObject({})).toBe(true);

@@ -1,5 +1,5 @@
 import type { Int } from "io-ts";
-import { one, zero } from "../../src/io/constants";
+import { one, zero } from "../../src/io/constants.js";
 import {
   addInt,
   floor,
@@ -9,7 +9,7 @@ import {
   multiplyInt,
   parseIntStrong,
   subtractInt,
-} from "../../src/io/int-math";
+} from "../../src/io/int-math.js";
 
 test(`add`, () => {
   expect(addInt(one, zero, 48 as Int)).toBe(49);

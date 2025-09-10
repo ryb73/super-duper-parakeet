@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import throttle from "lodash/throttle";
 import { useEffect, useMemo, useState } from "react";
-import { isDefined } from "../type-checks";
-import { useGetter } from "../useGetter";
+import { isDefined } from "../type-checks.js";
+import { useGetter } from "../useGetter.js";
 
 export type Options = {
   log?: (message: string, values: Record<string, unknown>) => void;

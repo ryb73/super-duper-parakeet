@@ -1,6 +1,6 @@
 import type { Method } from "axios";
 import axios from "axios";
-import type { Config } from "./types";
+import type { Config } from "./types.js";
 
 export async function apiRequest(
   { apiKey, accessToken }: Config,

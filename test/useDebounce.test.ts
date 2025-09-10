@@ -1,7 +1,7 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import { useState } from "react";
-import { useDebounce } from "../src/useDebounce";
-import { wait } from "../src/wait";
+import { useDebounce } from "../src/useDebounce.js";
+import { wait } from "../src/wait.js";
 
 test(`works`, async () => {
   expect.assertions(3);

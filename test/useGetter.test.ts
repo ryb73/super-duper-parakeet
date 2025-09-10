@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import { useState } from "react";
-import { useGetter } from "../src/useGetter";
+import { useGetter } from "../src/useGetter.js";
 
 test(`useGetter`, () => {
   const { result } = renderHook(() => {

@@ -1,4 +1,4 @@
-import { withDeps } from "../../src/testing/withDeps";
+import { withDeps } from "../../src/testing/withDeps.js";
 
 describe(`all`, () => {
   describe(`base`, () => {

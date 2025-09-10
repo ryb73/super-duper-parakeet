@@ -17,13 +17,13 @@ import {
   partial,
   union,
 } from "io-ts";
-import { isDefined } from "../type-checks";
+import { isDefined } from "../type-checks.js";
 import type {
   ClassOfHasProps,
   ClassesOfHasProps,
   HasPropsC,
   PropsOfHasProps,
-} from "./HasPropsC";
+} from "./HasPropsC.js";
 
 /* eslint-disable @typescript-eslint/no-use-before-define */
 type PartializeClassArray<

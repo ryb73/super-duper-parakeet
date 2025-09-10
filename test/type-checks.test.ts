@@ -1,5 +1,5 @@
 /* eslint-disable import/no-deprecated */
-import { assert as a, defined, isDefined, n } from "../src/type-checks";
+import { assert as a, defined, isDefined, n } from "../src/type-checks.js";
 
 describe(`assert`, () => {
   test(`truthy`, () => {

@@ -1,8 +1,8 @@
 import { isLeft } from "fp-ts/lib/Either";
 import prettyReporter from "io-ts-reporters";
-import { assert } from "../../src/assert";
-import { fd } from "../../src/io/forceDecode";
-import { NullFromString } from "../../src/io/NullFromString";
+import { assert } from "../../src/assert.js";
+import { fd } from "../../src/io/forceDecode.js";
+import { NullFromString } from "../../src/io/NullFromString.js";
 
 describe(`decode`, () => {
   test(`null`, () => {

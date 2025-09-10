@@ -4,9 +4,9 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import type { QueryObserverSuccessResult, UseQueryOptions } from "react-query";
 import { useQuery } from "react-query";
-import type { Options as LoadingOptions } from "../../src/Loading";
-import { WhenSuccessful } from "../../src/queries/WhenSuccessful";
-import { queryWrapper } from "../common/queryWrapper";
+import type { Options as LoadingOptions } from "../../src/Loading.js";
+import { WhenSuccessful } from "../../src/queries/WhenSuccessful.js";
+import { queryWrapper } from "../common/queryWrapper.js";
 
 import "@testing-library/jest-dom/extend-expect";
 

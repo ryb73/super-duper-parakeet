@@ -1,5 +1,5 @@
 import { string } from "io-ts";
-import { DecodeError, forceDecode } from "../../src/io/forceDecode";
+import { DecodeError, forceDecode } from "../../src/io/forceDecode.js";
 
 describe(`basic`, () => {
   const T = string;

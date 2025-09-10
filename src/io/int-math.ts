@@ -1,5 +1,5 @@
 import type { Int } from "io-ts";
-import { one, zero } from "./constants";
+import { one, zero } from "./constants.js";
 
 export function addInt<T extends Int>(...ints: T[]): T {
   return ints.reduce((a, b) => (a + b) as Int, zero) as T;

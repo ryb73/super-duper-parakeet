@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { isDefined } from "./type-checks";
+import { isDefined } from "./type-checks.js";
 
 type CanceledRef = {
   readonly current: boolean;

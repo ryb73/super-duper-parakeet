@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import React, { forwardRef } from "react";
 import { classes, style } from "typestyle";
-import { bareListStyles } from "../common/bareListStyles";
+import { bareListStyles } from "../common/bareListStyles.js";
 
 const baseClassName = style(bareListStyles);
 

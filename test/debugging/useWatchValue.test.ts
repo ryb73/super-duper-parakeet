@@ -1,10 +1,10 @@
 import { renderHook } from "@testing-library/react-hooks";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { Options } from "../../src/debugging/useWatchValue";
+import type { Options } from "../../src/debugging/useWatchValue.js";
 import {
   useWatchValue,
   useWatchValues,
-} from "../../src/debugging/useWatchValue";
+} from "../../src/debugging/useWatchValue.js";
 
 function useArrayLogger() {
   const ref = useRef<[string, Record<string, unknown>][]>([]);

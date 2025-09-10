@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { TypeOf } from "io-ts";
 import { Int, strict, string } from "io-ts";
-import { forceDecode } from "../io/forceDecode";
+import { forceDecode } from "../io/forceDecode.js";
 
 const ExternalTokens = strict({
   access_token: string,

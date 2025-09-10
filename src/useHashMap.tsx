@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import { isDefined } from "./type-checks";
-import { useForceUpdate } from "./useForceUpdate";
+import { isDefined } from "./type-checks.js";
+import { useForceUpdate } from "./useForceUpdate.js";
 
 export function useHashMap<K, V>(): [
   Map<K, V>,

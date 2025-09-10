@@ -19,14 +19,14 @@ import {
   type,
   union,
 } from "io-ts";
-import { isDefined } from "../type-checks";
-import type { RenameKey } from "../types/RenameKey";
+import { isDefined } from "../type-checks.js";
+import type { RenameKey } from "../types/RenameKey.js";
 import type {
   ClassOfHasProps,
   ClassesOfHasProps,
   HasPropsC,
   PropsOfHasProps,
-} from "./HasPropsC";
+} from "./HasPropsC.js";
 
 type RenameKeyLeafType<
   T extends PartialC<any> | TypeC<any>,

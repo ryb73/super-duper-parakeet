@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import React, { useCallback, useEffect } from "react";
 import type { HTMLAttributes, PropsWithChildren } from "react";
-import { isDefined } from "../type-checks";
-import { useRandomClassName } from "./randomClassName";
+import { isDefined } from "../type-checks.js";
+import { useRandomClassName } from "./randomClassName.js";
 
 type Props = PropsWithChildren<
   Omit<HTMLAttributes<HTMLSpanElement>, "onClick"> & {

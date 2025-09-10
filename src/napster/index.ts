@@ -1,2 +1,2 @@
-export * from "./getAccount";
-export * from "./refreshAccessToken";
+export * from "./getAccount.js";
+export * from "./refreshAccessToken.js";

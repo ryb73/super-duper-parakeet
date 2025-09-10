@@ -1,5 +1,5 @@
-import { isDefined } from "../type-checks";
-import { hasScrollbar } from "./hasScrollbar";
+import { isDefined } from "../type-checks.js";
+import { hasScrollbar } from "./hasScrollbar.js";
 
 export function getScrollParent(element: HTMLElement): HTMLElement | null {
   if (hasScrollbar(element)) {

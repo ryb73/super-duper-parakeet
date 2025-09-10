@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { bareButtonStyles } from "../common/bareButtonStyles";
-import { SafeButton } from "../SafeButton";
+import { bareButtonStyles } from "../common/bareButtonStyles.js";
+import { SafeButton } from "../SafeButton.js";
 
 export const BareButton = styled(SafeButton)({ ...bareButtonStyles });

@@ -1,4 +1,4 @@
-import { isDefined } from "../type-checks";
+import { isDefined } from "../type-checks.js";
 
 /**
  * @deprecated Use `.filter(isDefined)` instead

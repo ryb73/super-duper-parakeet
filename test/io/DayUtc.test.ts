@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
-import { DayUtc } from "../../src/io/DayUtc";
-import { forceDecode } from "../../src/io/forceDecode";
+import { DayUtc } from "../../src/io/DayUtc.js";
+import { forceDecode } from "../../src/io/forceDecode.js";
 
 describe(`basic`, () => {
   test(`decode`, () => {

@@ -1,5 +1,5 @@
-import { fd } from "../../src/io/forceDecode";
-import { TrimmedString } from "../../src/io/TrimmedString";
+import { fd } from "../../src/io/forceDecode.js";
+import { TrimmedString } from "../../src/io/TrimmedString.js";
 
 test(`decode`, () => {
   expect(fd(TrimmedString, `   null `)).toBe(`null`);

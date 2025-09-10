@@ -1,6 +1,6 @@
 import { string } from "io-ts";
-import { forceDecode } from "../../src/io/forceDecode";
-import { nullable } from "../../src/io/nullable";
+import { forceDecode } from "../../src/io/forceDecode.js";
+import { nullable } from "../../src/io/nullable.js";
 
 const T = nullable(string);
 

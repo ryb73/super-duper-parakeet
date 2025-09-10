@@ -1,4 +1,4 @@
-import { isDefined } from "../type-checks";
+import { isDefined } from "../type-checks.js";
 
 /** Determines whether the element is scrollable. Does not include `overflow: hidden`. */
 export function hasScrollbar(element: Element) {

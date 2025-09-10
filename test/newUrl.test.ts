@@ -1,4 +1,4 @@
-import { newUrl } from "../src/newUrl";
+import { newUrl } from "../src/newUrl.js";
 
 test(`good`, () => {
   expect(newUrl(`https://example.com`)).toBeInstanceOf(URL);

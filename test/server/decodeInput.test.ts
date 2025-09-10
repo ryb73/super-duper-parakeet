@@ -1,7 +1,7 @@
 import { isLeft } from "fp-ts/lib/Either";
 import { string } from "io-ts";
-import type { MinimalResponse } from "../../src/server/decodeInput";
-import { decodeInput } from "../../src/server/decodeInput";
+import type { MinimalResponse } from "../../src/server/decodeInput.js";
+import { decodeInput } from "../../src/server/decodeInput.js";
 
 test(`no existing data`, async () => {
   expect.assertions(3);

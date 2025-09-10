@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { isDefined } from "./type-checks";
+import { isDefined } from "./type-checks.js";
 
 type Options = {
   onError?: (error: Error) => void;

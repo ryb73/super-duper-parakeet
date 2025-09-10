@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
 import { string } from "io-ts";
-import { forceDecode } from "../../src/io/forceDecode";
+import { forceDecode } from "../../src/io/forceDecode.js";
 import { getAccount, refreshAccessToken } from "../../src/napster";
-import type { Account, Config, UserId } from "../../src/napster/types";
-import { isDefined } from "../../src/type-checks";
+import type { Account, Config, UserId } from "../../src/napster/types.js";
+import { isDefined } from "../../src/type-checks.js";
 
 const {
   NAPSTER_API_KEY,

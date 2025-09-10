@@ -1,6 +1,6 @@
 import type { WaitFor, WaitOptions } from "@testing-library/react-hooks";
 import type { UseQueryResult } from "react-query";
-import { isQueryResolved } from "../queries/isQueryResolved";
+import { isQueryResolved } from "../queries/isQueryResolved.js";
 
 export async function waitUntilResolved<T>(
   waitFor: WaitFor,

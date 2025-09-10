@@ -1,7 +1,7 @@
 import type { Dayjs } from "dayjs";
 import dayjs, { isDayjs } from "dayjs";
 import { Type, failure, string, success } from "io-ts";
-import { isDefined } from "../type-checks";
+import { isDefined } from "../type-checks.js";
 
 // Cache days mainly to prevent equality checks from failing leading to unnecessary re-renders
 // This is possible because Dayjs objects are immutable

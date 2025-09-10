@@ -1,4 +1,4 @@
-import { assert as a } from "../src/assert";
+import { assert as a } from "../src/assert.js";
 
 describe(`assert`, () => {
   test(`true`, () => {

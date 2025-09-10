@@ -12,8 +12,8 @@ import {
   union,
 } from "io-ts";
 import { omit } from "lodash";
-import { forceDecode } from "../../src/io/forceDecode";
-import { makePartial } from "../../src/io/makePartial";
+import { forceDecode } from "../../src/io/forceDecode.js";
+import { makePartial } from "../../src/io/makePartial.js";
 
 describe(`type`, () => {
   const T = makePartial(type({ n: number, s: string }));

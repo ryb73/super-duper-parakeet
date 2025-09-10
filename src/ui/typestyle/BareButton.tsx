@@ -1,8 +1,8 @@
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import React, { forwardRef } from "react";
 import { classes, style } from "typestyle";
-import { bareButtonStyles } from "../common/bareButtonStyles";
-import { SafeButton } from "../SafeButton";
+import { bareButtonStyles } from "../common/bareButtonStyles.js";
+import { SafeButton } from "../SafeButton.js";
 
 const baseClassName = style(bareButtonStyles);
 

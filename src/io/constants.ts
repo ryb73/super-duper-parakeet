@@ -1,5 +1,5 @@
 import { Int } from "io-ts";
-import { forceEither } from "../fp/forceEither";
+import { forceEither } from "../fp/forceEither.js";
 
 export const zero = forceEither(Int.decode(0));
 export const one = forceEither(Int.decode(1));

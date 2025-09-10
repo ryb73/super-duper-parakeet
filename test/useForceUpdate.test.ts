@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react-hooks";
-import { useCountRenders } from "../src/testing/useCountRenders";
-import { useForceUpdate } from "../src/useForceUpdate";
+import { useCountRenders } from "../src/testing/useCountRenders.js";
+import { useForceUpdate } from "../src/useForceUpdate.js";
 
 function hookFn() {
   return () => {

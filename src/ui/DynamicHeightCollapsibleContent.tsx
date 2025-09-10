@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import React, { useCallback, useEffect, useState } from "react";
-import { isDefined } from "../type-checks";
+import { isDefined } from "../type-checks.js";
 
 const additionalStyleProps = {
   hasBeenOpen: true,

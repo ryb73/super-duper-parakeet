@@ -12,8 +12,8 @@ import {
   type,
   union,
 } from "io-ts";
-import { forceDecode } from "../../src/io/forceDecode";
-import { renameKey } from "../../src/io/renameKey";
+import { forceDecode } from "../../src/io/forceDecode.js";
+import { renameKey } from "../../src/io/renameKey.js";
 
 describe(`renameKey`, () => {
   describe(`basic`, () => {

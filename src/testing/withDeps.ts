@@ -1,4 +1,4 @@
-import { defined, isDefined } from "../type-checks";
+import { defined, isDefined } from "../type-checks.js";
 
 type ValueFn<T> = () => PromiseLike<T> | T;
 

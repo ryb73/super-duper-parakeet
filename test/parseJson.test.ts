@@ -1,4 +1,4 @@
-import { parseJson } from "../src/parseJson";
+import { parseJson } from "../src/parseJson.js";
 
 test(`json`, () => {
   expect(parseJson(`"hot dog"`)).toBe(`hot dog`);

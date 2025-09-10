@@ -1,7 +1,7 @@
-import { forceDecode } from "../io/forceDecode";
-import { apiRequest } from "./apiRequest";
-import type { Config } from "./types";
-import { Account } from "./types";
+import { forceDecode } from "../io/forceDecode.js";
+import { apiRequest } from "./apiRequest.js";
+import type { Config } from "./types.js";
+import { Account } from "./types.js";
 
 export async function getAccount(config: Config) {
   const result = await apiRequest(config, `get`, `/me/account`);

@@ -9,8 +9,8 @@ import {
   string,
   union,
 } from "io-ts";
-import { forceDecode } from "../../src/io/forceDecode";
-import { keyTranslator } from "../../src/io/keyTranslator";
+import { forceDecode } from "../../src/io/forceDecode.js";
+import { keyTranslator } from "../../src/io/keyTranslator.js";
 
 const T = intersection([
   strict({ i: literal(`i`) }),

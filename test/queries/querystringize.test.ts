@@ -1,4 +1,4 @@
-import { querystringize } from "../../src/queries/querystringize";
+import { querystringize } from "../../src/queries/querystringize.js";
 
 test(`base`, () => {
   expect(

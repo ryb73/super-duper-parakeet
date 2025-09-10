@@ -1,4 +1,4 @@
-import { isDefined } from "./type-checks";
+import { isDefined } from "./type-checks.js";
 
 export function assert(result: boolean, message?: string): asserts result {
   if (!result)
