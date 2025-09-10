@@ -11,7 +11,7 @@ import {
   type,
   union,
 } from "io-ts";
-import { omit } from "lodash";
+import { omit } from "lodash-es";
 import { forceDecode } from "../../src/io/forceDecode.js";
 import { makePartial } from "../../src/io/makePartial.js";
 

@@ -1,4 +1,4 @@
-import merge from "lodash/merge.js";
+import { merge } from "lodash-es";
 
 export function mergeImmutable<T1, T2>(v1: T1, v2: T2): T1 & T2;
 export function mergeImmutable<T1, T2, T3>(

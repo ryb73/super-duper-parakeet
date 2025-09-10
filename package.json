@@ -42,7 +42,7 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.3",
-    "@types/lodash": "^4.14.168",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^17.0.23",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
@@ -60,7 +60,7 @@
     "io-ts-types": "^0.5.16",
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.5.0",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "monocle-ts": "^2.3.9",
     "nanoid": "^4.0.0",
     "newtype-ts": "^0.3.4",
@@ -74,7 +74,7 @@
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-config-standard-scss": "^11.0.0",
-    "ts-jest": "^29.1.0",
+    "ts-jest": "^29.4.1",
     "ts-node": "^10.1.0",
     "ts-toolbelt": "^9.6.0",
     "typescript": "5.0.4",
@@ -90,7 +90,7 @@
     "io-ts-reporters": "^2.0.0",
     "io-ts-types": "^0.5.16",
     "jest": ">=26 <=29",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "monocle-ts": "^2.3.9",
     "nanoid": "^3.0.0 || ^4.0.0",
     "newtype-ts": "^0.3.4",
@@ -127,7 +127,7 @@
     "jest": {
       "optional": true
     },
-    "lodash": {
+    "lodash-es": {
       "optional": true
     },
     "monocle-ts": {
