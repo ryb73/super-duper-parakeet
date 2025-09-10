@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import React from "react";
 import { Loading } from "../src/Loading.js";
 
 import "@testing-library/jest-dom/extend-expect";

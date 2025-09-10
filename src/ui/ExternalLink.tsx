@@ -1,5 +1,4 @@
 import type { AnchorHTMLAttributes, DetailedHTMLProps } from "react";
-import React from "react";
 
 export function ExternalLink({
   children,

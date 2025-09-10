@@ -1,5 +1,5 @@
-import { act, renderHook } from "@testing-library/react-hooks";
-import { useState } from "react";
+import { renderHook } from "@testing-library/react";
+import { act, useState } from "react";
 import { useDebounce } from "../src/useDebounce.js";
 import { wait } from "../src/wait.js";
 

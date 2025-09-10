@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Options } from "../../src/debugging/useWatchValue.js";
 import {

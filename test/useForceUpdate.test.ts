@@ -1,4 +1,5 @@
-import { act, renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react";
+import { act } from "react";
 import { useCountRenders } from "../src/testing/useCountRenders.js";
 import { useForceUpdate } from "../src/useForceUpdate.js";
 

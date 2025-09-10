@@ -1,5 +1,5 @@
-import { act, renderHook } from "@testing-library/react-hooks";
-import { useCallback, useRef, useState } from "react";
+import { renderHook } from "@testing-library/react";
+import { act, useCallback, useRef, useState } from "react";
 import { delay } from "../src/fp/delay.js";
 import { useAsyncEffect } from "../src/useAsyncEffect.js";
 import { wait } from "../src/wait.js";
