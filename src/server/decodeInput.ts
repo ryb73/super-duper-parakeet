@@ -1,4 +1,4 @@
-import { isLeft } from "fp-ts/lib/Either";
+import { isLeft } from "fp-ts/lib/Either.js";
 import type { Errors, Type } from "io-ts";
 
 type Options = {

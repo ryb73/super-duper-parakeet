@@ -1,4 +1,4 @@
-import { delay as fpDelay } from "fp-ts/lib/Task";
+import { delay as fpDelay } from "fp-ts/lib/Task.js";
 
 export function delay(ms: number) {
   // eslint-disable-next-line total-functions/no-premature-fp-ts-effects

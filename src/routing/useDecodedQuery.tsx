@@ -1,5 +1,5 @@
 import type { Type } from "io-ts";
-import { useRouter } from "next/router";
+import { useRouter } from "next/router.js";
 import { useMemo } from "react";
 import { forceDecode } from "../io/forceDecode.js";
 

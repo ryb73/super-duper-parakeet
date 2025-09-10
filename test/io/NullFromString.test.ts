@@ -1,4 +1,4 @@
-import { isLeft } from "fp-ts/lib/Either";
+import { isLeft } from "fp-ts/lib/Either.js";
 import prettyReporter from "io-ts-reporters";
 import { assert } from "../../src/assert.js";
 import { fd } from "../../src/io/forceDecode.js";

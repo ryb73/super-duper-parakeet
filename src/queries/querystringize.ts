@@ -1,4 +1,4 @@
-import reduce from "lodash/reduce";
+import reduce from "lodash/reduce.js";
 
 type InValue = boolean | number | string | null | undefined;
 

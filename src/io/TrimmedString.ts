@@ -1,4 +1,4 @@
-import { isLeft } from "fp-ts/lib/Either";
+import { isLeft } from "fp-ts/lib/Either.js";
 import { Type, string, success } from "io-ts";
 
 export const TrimmedString = new Type<string, string, unknown>(

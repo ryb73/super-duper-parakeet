@@ -5,6 +5,7 @@
   "repository": "git@github.com:ryb73/super-duper-parakeet.git",
   "author": "Ryan <rpbiwer@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -44,11 +45,11 @@
     "@types/jest": "^29.5.3",
     "@types/lodash": "^4.14.168",
     "@types/node": "^17.0.23",
-    "@types/react": "^17.0.4",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "@types/testing-library__jest-dom": "^5.9.5",
     "@typescript-eslint/utils": "^6.14.0",
     "assert": "^2.0.0",
-    "axios": "^0.26.1",
     "dayjs": "^1.10.4",
     "dotenv": "^16.0.0",
     "eslint": "^8.50.0",
@@ -68,9 +69,8 @@
     "postcss": "^8.4.31",
     "prettier": "^3.0.0",
     "prettier-plugin-css-order": "^2.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-query": "^3.13.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-test-renderer": "^18.0.0",
     "sass": "^1.68.0",
     "stylelint": "^15.10.3",
@@ -86,7 +86,6 @@
     "@emotion/react": "*",
     "@emotion/styled": "^11.3.0",
     "@radix-ui/react-collapsible": "^0.1.6 || ^1.0.2",
-    "axios": "^0.26.1",
     "dayjs": "*",
     "fp-ts": "^2.10.4",
     "io-ts": "^2.2.16",
@@ -100,7 +99,6 @@
     "next": ">=9 <=13",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-query": "^3.13.12",
     "typestyle": "^2.4.0"
   },
   "peerDependenciesMeta": {
@@ -111,9 +109,6 @@
       "optional": true
     },
     "@radix-ui/react-collapsible": {
-      "optional": true
-    },
-    "axios": {
       "optional": true
     },
     "dayjs": {
@@ -153,9 +148,6 @@
       "optional": true
     },
     "react-dom": {
-      "optional": true
-    },
-    "react-query": {
       "optional": true
     },
     "typestyle": {

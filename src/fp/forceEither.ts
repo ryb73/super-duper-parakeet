@@ -1,6 +1,6 @@
-import type { Either } from "fp-ts/lib/Either";
-import { getOrElse } from "fp-ts/lib/Either";
-import { pipe } from "fp-ts/lib/function";
+import type { Either } from "fp-ts/lib/Either.js";
+import { getOrElse } from "fp-ts/lib/Either.js";
+import { pipe } from "fp-ts/lib/function.js";
 
 export function forceEither<A>(either: Either<unknown, A>): A {
   return pipe(

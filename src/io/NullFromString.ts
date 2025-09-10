@@ -1,4 +1,4 @@
-import { isLeft } from "fp-ts/lib/Either";
+import { isLeft } from "fp-ts/lib/Either.js";
 import { Type, failure, nullType, string, success } from "io-ts";
 
 export const NullFromString = new Type<null, string, unknown>(

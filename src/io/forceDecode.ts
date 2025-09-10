@@ -1,4 +1,4 @@
-import { getOrElse, left } from "fp-ts/lib/Either";
+import { getOrElse, left } from "fp-ts/lib/Either.js";
 import type { invalid } from "invalid-type";
 import type { Decode, Errors, Type } from "io-ts";
 import reporter from "io-ts-reporters";

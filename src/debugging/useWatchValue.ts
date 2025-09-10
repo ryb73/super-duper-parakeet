@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import throttle from "lodash/throttle";
+import throttle from "lodash/throttle.js";
 import { useEffect, useMemo, useState } from "react";
 import { useGetter } from "../useGetter.js";
 

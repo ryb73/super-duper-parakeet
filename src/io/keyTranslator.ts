@@ -1,4 +1,4 @@
-import { isLeft } from "fp-ts/lib/Either";
+import { isLeft } from "fp-ts/lib/Either.js";
 import { Type, UnknownRecord, success } from "io-ts";
 
 export function keyTranslator(keyMap: Record<string, string>, strict = true) {
