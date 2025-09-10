@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import React, { useCallback, useEffect, useState } from "react";
-import { isDefined } from "../type-checks.js";
 
 const additionalStyleProps = {
   hasBeenOpen: true,
@@ -67,7 +66,7 @@ export function DynamicHeightCollapsibleContent({
   }, [hasBeenOpen, isOpen]);
 
   useEffect(() => {
-    if (rendered || !isDefined(elem)) return undefined;
+    if (rendered || elem == null) return undefined;
 
     const interval = setInterval(() => {
       const heightValue = +getComputedStyle(elem)

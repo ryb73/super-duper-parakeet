@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import { isDefined } from "./type-checks.js";
 
 type Options = {
   onError?: (error: Error) => void;
@@ -11,7 +10,7 @@ export function useTick({ onError }: Options = {}) {
   const start = useCallback(
     (cb: () => void, ms: number) => {
       setTickInterval((curInterval) => {
-        if (!isDefined(curInterval))
+        if (curInterval == null)
           return setInterval(() => {
             cb();
           }, ms);
@@ -31,7 +30,7 @@ export function useTick({ onError }: Options = {}) {
   // Be sure to clear interval on unmount, or if interval is unset (by clear)
   useEffect(
     () => () => {
-      if (isDefined(interval)) clearInterval(interval);
+      if (interval != null) clearInterval(interval);
     },
     [interval],
   );

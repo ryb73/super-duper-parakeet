@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import throttle from "lodash/throttle";
 import { useEffect, useMemo, useState } from "react";
-import { isDefined } from "../type-checks.js";
 import { useGetter } from "../useGetter.js";
 
 export type Options = {
@@ -43,13 +42,13 @@ export function useWatchValues(
 
   useEffect(() => {
     const changedEntries = Object.entries(memoedVs).filter(
-      ([vName, v]) => !isDefined(previousValues) || v !== previousValues[vName],
+      ([vName, v]) => previousValues == null || v !== previousValues[vName],
     );
 
     if (changedEntries.length === 0) return;
 
     getLog()(
-      `${isDefined(previousValues) ? `updated` : `initial watch`} ${name}:`,
+      `${previousValues != null ? `updated` : `initial watch`} ${name}:`,
       Object.fromEntries(changedEntries),
     );
 

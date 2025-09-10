@@ -6,7 +6,7 @@ export function assert<T>(v: T | null | undefined, message?: string) {
 }
 
 function isDefined<T>(value: T | null | undefined | void): value is T {
-  return value !== null && value !== undefined;
+  return value != null;
 }
 export { isDefined };
 
@@ -14,11 +14,9 @@ export function defined<T>(
   v: T | null | undefined | void,
   message?: string,
 ): T {
-  if (isDefined(v)) return v;
+  if (v != null) return v;
 
-  throw new Error(
-    `Assertion failed${isDefined(message) ? `: ${message}` : ``}`,
-  );
+  throw new Error(`Assertion failed${message != null ? `: ${message}` : ``}`);
 }
 
 function isNull<T>(value: T | null): value is null {

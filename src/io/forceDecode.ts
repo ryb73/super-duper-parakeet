@@ -2,7 +2,6 @@ import { getOrElse, left } from "fp-ts/lib/Either";
 import type { invalid } from "invalid-type";
 import type { Decode, Errors, Type } from "io-ts";
 import reporter from "io-ts-reporters";
-import { isDefined } from "../type-checks.js";
 
 export class DecodeError extends Error {
   public value: unknown;
@@ -45,7 +44,7 @@ function forceDecode<A, O, I>(
   return getOrElse<Errors, A>((err) => {
     const report = reporter.report(left(err));
     throw new DecodeError(
-      `${isDefined(message) ? `[${message}] ` : ``}Decode failed:
+      `${message != null ? `[${message}] ` : ``}Decode failed:
           ${JSON.stringify(value)}
           ${JSON.stringify(report)}
         `,

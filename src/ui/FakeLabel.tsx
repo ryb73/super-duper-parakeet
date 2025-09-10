@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
-import React, { useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import type { HTMLAttributes, PropsWithChildren } from "react";
-import { isDefined } from "../type-checks.js";
 import { useRandomClassName } from "./randomClassName.js";
 
 type Props = PropsWithChildren<
@@ -32,7 +31,7 @@ export function FakeLabel({
     if (!setAriaLabel) return undefined;
 
     const targetElem = document.querySelector(`#${htmlFor}`);
-    if (!isDefined(targetElem)) return undefined;
+    if (targetElem == null) return undefined;
 
     targetElem.setAttribute(`aria-labelledby`, labelId);
 

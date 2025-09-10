@@ -1,4 +1,4 @@
-import { defined, isDefined } from "../type-checks.js";
+import { defined } from "../type-checks.js";
 
 type ValueFn<T> = () => PromiseLike<T> | T;
 
@@ -35,7 +35,7 @@ export function withDeps<AllValue, EachValue>({
   const ref: { all?: AllValue; each?: EachValue } = {};
 
   // alls
-  if (isDefined(cbBeforeAll)) {
+  if (cbBeforeAll != null) {
     beforeAll(async () => {
       ref.all = await cbBeforeAll();
     });
@@ -44,11 +44,11 @@ export function withDeps<AllValue, EachValue>({
   afterAll(async () => {
     const allValue = ref.all!;
     ref.all = undefined;
-    if (isDefined(cbAfterAll)) await cbAfterAll(allValue);
+    if (cbAfterAll != null) await cbAfterAll(allValue);
   });
 
   // eaches
-  if (isDefined(cbBeforeEach)) {
+  if (cbBeforeEach != null) {
     beforeEach(async () => {
       ref.each = await cbBeforeEach();
     });
@@ -57,7 +57,7 @@ export function withDeps<AllValue, EachValue>({
   afterEach(async () => {
     const eachValue = ref.each!;
     ref.each = undefined;
-    if (isDefined(cbAfterEach)) await cbAfterEach(eachValue);
+    if (cbAfterEach != null) await cbAfterEach(eachValue);
   });
 
   tests({

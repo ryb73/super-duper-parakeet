@@ -5,7 +5,6 @@ import type {
   QueryObserverSuccessResult,
 } from "react-query";
 import { Loading } from "../Loading.js";
-import { isDefined } from "../type-checks.js";
 import { isQueryResolved } from "./isQueryResolved.js";
 
 type SingularProps<Data> = {
@@ -34,11 +33,11 @@ export function WhenSuccessfulMultiple<D1, D2>({
     undefined,
   );
 
-  if (isDefined(relevantResult) && relevantResult.isLoading)
+  if (relevantResult != null && relevantResult.isLoading)
     return <Loading retryCount={relevantResult.failureCount} />;
-  if (isDefined(relevantResult) && relevantResult.isError)
+  if (relevantResult != null && relevantResult.isError)
     return <div>Error :(</div>;
-  if (isDefined(relevantResult) && relevantResult.isIdle) return <Loading />;
+  if (relevantResult != null && relevantResult.isIdle) return <Loading />;
 
   return (
     <>

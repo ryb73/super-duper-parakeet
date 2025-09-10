@@ -1,7 +1,6 @@
 import type { Dayjs } from "dayjs";
 import dayjs, { isDayjs } from "dayjs";
 import { Type, failure, string, success } from "io-ts";
-import { isDefined } from "../type-checks.js";
 
 // Cache days mainly to prevent equality checks from failing leading to unnecessary re-renders
 // This is possible because Dayjs objects are immutable
@@ -12,7 +11,7 @@ class DateCache {
     const key = day.toISOString();
 
     const existing = this.dayMap.get(key);
-    if (isDefined(existing)) return existing;
+    if (existing != null) return existing;
 
     this.dayMap.set(key, day);
     return day;

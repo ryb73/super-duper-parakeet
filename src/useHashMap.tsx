@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import { isDefined } from "./type-checks.js";
 import { useForceUpdate } from "./useForceUpdate.js";
 
 export function useHashMap<K, V>(): [
@@ -15,13 +14,13 @@ export function useHashMap<K, V>(): [
 
   useEffect(
     () => () =>
-      isDefined(timeout.current) ? clearTimeout(timeout.current) : undefined,
+      timeout.current != null ? clearTimeout(timeout.current) : undefined,
     [],
   );
 
   // Batch updates for performance reasons
   const scheduleUpdate = useCallback(() => {
-    if (isDefined(timeout.current)) return;
+    if (timeout.current != null) return;
     timeout.current = setTimeout(() => {
       forceUpdate();
       timeout.current = undefined;

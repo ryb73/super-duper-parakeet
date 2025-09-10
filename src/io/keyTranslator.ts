@@ -1,6 +1,5 @@
 import { isLeft } from "fp-ts/lib/Either";
 import { Type, UnknownRecord, success } from "io-ts";
-import { isDefined } from "../type-checks.js";
 
 export function keyTranslator(keyMap: Record<string, string>, strict = true) {
   const reverseKeyMap = Object.entries(keyMap).reduce<Record<string, string>>(
@@ -17,7 +16,7 @@ export function keyTranslator(keyMap: Record<string, string>, strict = true) {
 
       const result = Object.entries(recordValidate.right).reduce(
         (acc, [key, value]) =>
-          isDefined(reverseKeyMap[key])
+          reverseKeyMap[key] != null
             ? {
                 ...acc,
                 [reverseKeyMap[key]!]: value,
@@ -33,7 +32,7 @@ export function keyTranslator(keyMap: Record<string, string>, strict = true) {
     (v: Record<string, unknown>) =>
       Object.entries(v).reduce(
         (acc, [key, value]) =>
-          isDefined(keyMap[key])
+          keyMap[key] != null
             ? {
                 ...acc,
                 [keyMap[key]!]: value,

@@ -1,4 +1,3 @@
-import { isDefined } from "../type-checks.js";
 import { hasScrollbar } from "./hasScrollbar.js";
 
 export function getScrollParent(element: HTMLElement): HTMLElement | null {
@@ -7,7 +6,7 @@ export function getScrollParent(element: HTMLElement): HTMLElement | null {
   }
 
   if (
-    !isDefined(element.parentElement) ||
+    element.parentElement == null ||
     element.parentElement === document.body
   ) {
     return document.scrollingElement as HTMLElement;

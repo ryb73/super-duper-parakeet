@@ -158,16 +158,12 @@ export function renameKey<
       [
         renameKey(One as HasPropsC, oldKey, newKey),
         renameKey(Two as HasPropsC, oldKey, newKey),
-        isDefined(Three)
+        Three != null
           ? renameKey(Three as HasPropsC, oldKey, newKey)
           : undefined,
-        isDefined(Four)
-          ? renameKey(Four as HasPropsC, oldKey, newKey)
-          : undefined,
-        isDefined(Five)
-          ? renameKey(Five as HasPropsC, oldKey, newKey)
-          : undefined,
-      ].filter((v) => isDefined(v)) as any,
+        Four != null ? renameKey(Four as HasPropsC, oldKey, newKey) : undefined,
+        Five != null ? renameKey(Five as HasPropsC, oldKey, newKey) : undefined,
+      ].filter(isDefined) as any,
     ) as unknown as RenameKeyType<T, Old, New>;
   }
 

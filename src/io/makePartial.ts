@@ -92,10 +92,10 @@ export function makePartial<
       [
         makePartial(One as HasPropsC),
         makePartial(Two as HasPropsC),
-        isDefined(Three) ? makePartial(Three as HasPropsC) : undefined,
-        isDefined(Four) ? makePartial(Four as HasPropsC) : undefined,
-        isDefined(Five) ? makePartial(Five as HasPropsC) : undefined,
-      ].filter((v) => isDefined(v)) as any,
+        Three != null ? makePartial(Three as HasPropsC) : undefined,
+        Four != null ? makePartial(Four as HasPropsC) : undefined,
+        Five != null ? makePartial(Five as HasPropsC) : undefined,
+      ].filter(isDefined) as any,
     ) as unknown as MakePartial<T>;
   }
 
