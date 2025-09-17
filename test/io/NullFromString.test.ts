@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { describe, expect, test } from "@jest/globals";
 import { isLeft } from "fp-ts/lib/Either.js";
 import prettyReporter from "io-ts-reporters";
 import { assert } from "../../src/assert.js";

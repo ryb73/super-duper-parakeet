@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { describe, expect, test } from "@jest/globals";
 import type { Int } from "io-ts";
 import { one, zero } from "../../src/io/constants.js";
 import {

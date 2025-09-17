@@ -19,6 +19,7 @@ export function defined<T>(
   throw new Error(`Assertion failed${message != null ? `: ${message}` : ``}`);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
 function isNull<T>(value: T | null): value is null {
   return value === null;
 }

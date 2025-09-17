@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { expect, test } from "@jest/globals";
 import { fd } from "../../src/io/forceDecode.js";
 import { TrimmedString } from "../../src/io/TrimmedString.js";
 

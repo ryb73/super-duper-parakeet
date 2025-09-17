@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { expect, test } from "@jest/globals";
 import { parseJson } from "../src/parseJson.js";
 
 test(`json`, () => {

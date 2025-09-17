@@ -1,4 +1,6 @@
 /* eslint-disable import/no-deprecated */
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { describe, expect, test } from "@jest/globals";
 import { assert as a, defined, isDefined, n } from "../src/type-checks.js";
 
 describe(`assert`, () => {

@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { describe, expect, test } from "@jest/globals";
 import { assert as a } from "../src/assert.js";
 
 describe(`assert`, () => {

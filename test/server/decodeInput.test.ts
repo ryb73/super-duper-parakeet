@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { describe, expect, jest, test } from "@jest/globals";
 import { isLeft } from "fp-ts/lib/Either.js";
 import { string } from "io-ts";
 import type { MinimalResponse } from "../../src/server/decodeInput.js";

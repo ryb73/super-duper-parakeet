@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { afterAll, describe, expect, test } from "@jest/globals";
 import { withDeps } from "../../src/testing/withDeps.js";
 
 describe(`all`, () => {

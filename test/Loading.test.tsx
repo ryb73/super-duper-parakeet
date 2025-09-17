@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { describe, expect, test } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import { Loading } from "../src/Loading.js";
 

@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { describe, expect, test } from "@jest/globals";
 import dayjs from "dayjs";
 import { DayUtc } from "../../src/io/DayUtc.js";
 import { forceDecode } from "../../src/io/forceDecode.js";

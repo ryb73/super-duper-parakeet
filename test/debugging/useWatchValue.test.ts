@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { describe, expect, test } from "@jest/globals";
 import { renderHook } from "@testing-library/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Options } from "../../src/debugging/useWatchValue.js";
@@ -107,6 +109,7 @@ function hookFn(options: Omit<Options, "log"> = {}) {
     return ref;
   };
 }
+
 describe(`useWatchValues`, () => {
   test(`works`, () => {
     const { result } = renderHook(hookFn());

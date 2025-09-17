@@ -13,7 +13,7 @@ export function mergeImmutable<T1, T2, T3, T4>(
   v4: T4,
 ): T1 & T2 & T3 & T4;
 export function mergeImmutable<T extends Readonly<any>[]>(
-  ...args: Readonly<T[]>
+  ...args: readonly T[]
 ) {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return merge({}, ...args);

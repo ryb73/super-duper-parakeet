@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { expect, test } from "@jest/globals";
 import { renderHook } from "@testing-library/react";
 import { act, useState } from "react";
 import { useGetter } from "../src/useGetter.js";

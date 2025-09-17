@@ -19,11 +19,11 @@ export function keyTranslator(keyMap: Record<string, string>, strict = true) {
           reverseKeyMap[key] != null
             ? {
                 ...acc,
-                [reverseKeyMap[key]!]: value,
+                [reverseKeyMap[key]]: value,
               }
             : strict
-            ? acc
-            : { ...acc, [key]: value },
+              ? acc
+              : { ...acc, [key]: value },
         {},
       );
 
@@ -35,11 +35,11 @@ export function keyTranslator(keyMap: Record<string, string>, strict = true) {
           keyMap[key] != null
             ? {
                 ...acc,
-                [keyMap[key]!]: value,
+                [keyMap[key]]: value,
               }
             : strict
-            ? acc
-            : { ...acc, [key]: value },
+              ? acc
+              : { ...acc, [key]: value },
         {},
       ),
   );

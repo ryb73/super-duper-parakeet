@@ -1,4 +1,6 @@
-import assert from "assert";
+import assert from "node:assert";
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { describe, expect, test } from "@jest/globals";
 import type { Type, TypeOf } from "io-ts";
 import {
   exact,

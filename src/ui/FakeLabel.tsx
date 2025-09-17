@@ -39,6 +39,7 @@ export function FakeLabel({
   }, [htmlFor, labelId, setAriaLabel]);
 
   return (
+    // eslint-disable-next-line styled-components-a11y/no-static-element-interactions, styled-components-a11y/click-events-have-key-events
     <StyledSpan id={labelId} onClick={handleClick} {...props}>
       {children}
     </StyledSpan>
