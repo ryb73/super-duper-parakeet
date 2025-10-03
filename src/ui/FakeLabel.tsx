@@ -24,13 +24,13 @@ export function FakeLabel({
   const labelId = props.id ?? generatedClassName;
 
   const handleClick = useCallback(() => {
-    document.querySelector<HTMLElement>(`#${htmlFor}`)?.focus();
+    document.getElementById(htmlFor)?.focus();
   }, [htmlFor]);
 
   useEffect(() => {
     if (!setAriaLabel) return undefined;
 
-    const targetElem = document.querySelector(`#${htmlFor}`);
+    const targetElem = document.getElementById(htmlFor);
     if (targetElem == null) return undefined;
 
     targetElem.setAttribute(`aria-labelledby`, labelId);
