@@ -70,8 +70,8 @@
     "postcss": "^8.4.31",
     "prettier": "^3.0.0",
     "prettier-plugin-css-order": "^2.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "sass": "^1.68.0",
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0",
@@ -97,8 +97,8 @@
     "nanoid": "^3.0.0 || ^4.0.0 || ^5.0.0",
     "newtype-ts": "^0.3.4",
     "next": ">=9 <=13",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "typestyle": "^2.4.0"
   },
   "peerDependenciesMeta": {
