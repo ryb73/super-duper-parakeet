@@ -11,6 +11,9 @@ on:
       - v*
   pull_request:
 
+permissions:
+  id-token: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -44,6 +47,4 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org/
       - uses: ./.github/actions/build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - run: npm publish --provenance
